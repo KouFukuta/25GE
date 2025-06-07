@@ -1,0 +1,7 @@
+#仮想環境
+.venv
+
+#Tunedモデル
+tunedModels/
+
+

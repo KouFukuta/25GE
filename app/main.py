@@ -24,6 +24,7 @@ def form_get(request: Request):
 # インプットを受け取って対話を生成
 @app.post("/", response_class=HTMLResponse)
 def form_post(request: Request, answer: str = Form(...), question: str = Form(...)):
+    
     response = generateResponse(tokenizer, model, answer)
     saveJSON(question, answer)
     return templates.TemplateResponse("form.html", {
