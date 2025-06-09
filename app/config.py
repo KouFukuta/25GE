@@ -2,7 +2,8 @@ from pathlib import Path
 import torch
 
 # モデル関連
-MODEL_PATH = Path("./tunedModels/merged/mergedModel3").resolve()
+# MODEL_PATH = "rinna/japanese-gpt2-medium"
+MODEL_PATH = Path("./tunedModels/merged/mergedModel5").resolve()
 TUNED_MODEL_PATH = Path("./tunedModel").resolve()
 TOKENIZER_USE_FAST = False
 TRUST_REMOTE_CODE = True
