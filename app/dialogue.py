@@ -2,12 +2,18 @@ from .config import DEVICE
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from pathlib import Path
+import random as rd
 
 #ユーザーに対する質問を作成
 
 def generateQuestion(tokenizer, model):
 
-    prompt = "私に対して短い質問をしてください。"
+    prompt = rd.choice([
+        "あなたの",
+        "あなたが",
+        "最近",
+        "もし、",
+    ])
 
     inputs = tokenizer(
         prompt,

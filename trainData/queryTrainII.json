@@ -1,0 +1,403 @@
+[
+    {
+        "instruction": "あなたの",
+        "output": "好きなことを教えてください。"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "趣味は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな食べ物は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな映画は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな音楽は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな本は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな旅行先はどこですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きなスポーツは何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな季節はいつですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな動物は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな色は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな場所はどこですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きな飲み物は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "好きなゲームは何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "今日の朝ごはんは何でしたか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "今日の晩御飯は何を作る予定ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "今考えていることはなんですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "友達にはどんな人がいますか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "家族は何人いますか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "親友はどんな人ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "人生で一番大切なものは何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "テストで一番良かった点は何点ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "得意な教科は何ですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "失敗した経験はどんなことですか？"
+    },
+    {
+        "instruction": "あなたの",
+        "output": "将来の夢は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "思う一番の幸せは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "今までで一番感動したことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "体験した中で一番怖かったことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "一番大事にしていることは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "一番好きな思い出は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "今考えていることはなんですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "楽しいと思う瞬間はいつですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "知識を深めたいと思う分野は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "目指している職業は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "作った中で一番おいしかった料理は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "今日までに学んだことの中で一番役立ったことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "一番興味深いと思ったことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "最近ハマっていることは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "最近のニュースで気になったことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "すごく感謝している人は誰ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "大事にしている価値観は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "改めて考えたいと思うことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "一番楽しいと思えた瞬間はいつですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "おすすめしたい趣味は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "教えてあげたいと思うことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "素敵だと思うことは何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "感動した出来事は何ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "一番尊敬している人は誰ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "好きなアーティストは誰ですか？"
+    },
+    {
+        "instruction": "あなたが",
+        "output": "いま一番興味を持っていることは何ですか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "気になっていることはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "嬉しかったことは何ですか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "よく聴いている音楽はありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "どんなことを考えていますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "体調はどうですか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "何か面白いことはありましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "悲しかったことはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "びっくりしたことはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "気になっているニュースはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "注目しているトピックはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "使っているアプリは何ですか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "新しい趣味は始めましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "買ってよかったものはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "だれかと会いましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "と現代を比べてどう思いますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "何か新しいことを学びましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "何か挑戦したことはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "お出かけはしましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "どこか遊びに行きましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "どんな一日を過ごしましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "何か新しい発見はありましたか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "あんまり良くなかったことはありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "観ているテレビ番組はありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "心に残った出来事はありますか？"
+    },
+    {
+        "instruction": "最近",
+        "output": "特別な出来事はありましたか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたが一つだけ願いを叶えられるとしたら、何を願いますか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたが一日だけ誰かになれるとしたら、誰になりたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "明日なんでもできるとしたら、何をしますか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "動物になれるなら、どの動物になりたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "過去に戻れるとしたら、どの時代に行きたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "未来に行けるとしたら、何年後に行きたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたが一つだけ超能力を持てるとしたら、どんな能力が欲しいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたが一つだけ世界を変えられるとしたら、何を変えたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "総理大臣になれるとしたら、最初に何をしますか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "無人島に飛ばされたら、何を持って行きたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたの好きな食べ物を一生食べられるとしたら、何を選びますか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "分身ができるとしたら、何をしてもらいたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたが時間を止められるとしたら、どの瞬間を止めたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "世界が終わるとしたら、最後に何をしたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "海外旅行が無料で行けるとしたら、どこに行きたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "国内旅行にすぐ行けるとしたら、どこに行きたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "１００万円もらえるとしたら、何に使いますか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "宝くじに当たったら、何をしますか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "好きな有名人と会えるとしたら、誰に会いたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "車を一台もらえるとしたら、どの車が欲しいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "ゲームを作るとしたら、どんなゲームを作りたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "AIと一緒に何かを作るとしたら、何を作りたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "仕事を一つ選べるとしたら、どんな仕事をしたいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "あなたが一つだけ特技を持てるとしたら、どんな特技が欲しいですか？"
+    },
+    {
+        "instruction": "もし、",
+        "output": "昨日の出来事をもう一度体験できるとしたら、何を体験したいですか？"
+    }
+    
+]
