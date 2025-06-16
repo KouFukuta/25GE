@@ -3,8 +3,8 @@ import torch
 
 # モデル関連
 # MODEL_PATH = "rinna/japanese-gpt2-medium"
-MODEL_PATH = Path("./tunedModels/merged/QueryTunedII").resolve()
-TUNED_MODEL_PATH = Path("./tunedModel").resolve()
+MODEL_PATH = Path(r"./output/checkpoint-500")
+TUNED_MODEL_PATH = Path("cyberagent/open-calm-small")
 TOKENIZER_USE_FAST = False
 TRUST_REMOTE_CODE = True
 LOCAL_FILES_ONLY = True

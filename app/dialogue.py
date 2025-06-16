@@ -4,73 +4,106 @@ import torch
 from pathlib import Path
 import random as rd
 
-#ユーザーに対する質問を作成
+# ユーザーに対する質問を作成
+
 
 def generateQuestion(tokenizer, model):
+    model = AutoModelForCausalLM.from_pretrained(
+        "./output/checkpoint-500"
+    )
+    tokenizer = AutoTokenizer.from_pretrained(
+        "cyberagent/open-calm-small"
+    )
 
-    prompt = rd.choice([
-        "あなたの",
-        "あなたが",
-        "最近",
-        "もし、",
-    ])
+    template = {
+        "w_input": (
+            "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
+            "### 指示:\n{instruction}\n\n"
+            "### 入力:\n{input}\n\n"
+            "### 応答:\n"
+        ),
+        "wo_input": (
+            "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
+            "### 指示:\n{instruction}\n\n"
+            "### 応答:\n"
+        )
+    }
 
-    inputs = tokenizer(
-        prompt,
-        return_tensors="pt",
-        truncation=True,
-        max_length=50,
-        add_special_tokens=True,
-    ).to(DEVICE)
+    d = {}
+    d['instruction'] = "質問を作成して"
+    d['output'] = ""
 
-    model.eval()
+    ptext = template['wo_input'].format_map(d)
 
+    input = tokenizer.encode(
+        ptext,
+        return_tensors="pt"
+    )
+    start_pos = len(input[0])
     with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=50,
-            pad_token_id=tokenizer.pad_token_id,
+        tokens = model.generate(
+            input,
+            max_new_tokens=64,
             do_sample=True,
+            pad_token_id=tokenizer.eos_token_id,
             temperature=0.7,
+            top_p=0.9,
         )
 
-    full_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    query = full_text[len(prompt):]
-    
-    print("Question: " + query)
-    
+    query = tokenizer.decode(tokens[0][start_pos:], skip_special_tokens=True)
+    print(query)
+
     return query
 
-def generateResponse(tokenizer, model, answer):
-    #ユーザーに質問を投げる
-    prompt = answer
-    print("Input: " + answer)
 
-    inputs = tokenizer(
-        prompt,
-        return_tensors = "pt",
-        truncation = True,
-        max_length = 512,
-        add_special_tokens = True,
-    ).to(DEVICE)
+def generateResponse(tokenizer, model, query, answer):
+    # ユーザーに質問を投げる
 
-    model.eval()
-
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens = 50,
-            pad_token_id = tokenizer.pad_token_id,
-            do_sample = True,
-            temperature = 0.7,
+    template = {
+        "w_input": (
+            "以下はユーザーとの会話の続きです。共感をしながら内容を深堀りしてください。\n\n"
+            "{query}\n"
+            
+            "### 指示:\n{instruction}\n\n"
+            "### 入力:\n{input}\n\n"
+            "### 応答:\n"
+        ),
+        "wo_input": (
+            "以下はユーザーとの会話の続きです。共感をしながら内容を深堀りしてください。\n\n"
+            "{query}\n"
+            "### 指示:\n{instruction}\n\n"
+            "### 応答:\n"
         )
-    
-    full_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    }
 
-    generated = full_text[len(prompt):]
+    d = {
+        "query": query
+    }
+    d['instruction'] = answer
+    d['output'] = ""
 
-    # 結果の出力
-    print("Output: " + generated.strip())
-    
-    return prompt, generated
+    ptext = template['wo_input'].format_map(d)
 
+    input = tokenizer.encode(
+        ptext,
+        return_tensors="pt"
+    )
+    start_pos = len(input[0])
+    with torch.no_grad():
+        tokens = model.generate(
+            input,
+            max_new_tokens=32,
+            do_sample=True,
+            pad_token_id=tokenizer.eos_token_id,
+            temperature=0.7,
+            top_p=0.9,
+        )
+
+    response = tokenizer.decode(tokens[0][start_pos:], skip_special_tokens=True)
+
+    import re
+    response = re.sub(r"###.*", "", response).strip()
+
+    print(response)
+
+    return response
