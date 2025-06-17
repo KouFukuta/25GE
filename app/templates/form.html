@@ -26,32 +26,46 @@
 
   <div class="contents">
 
-    <div class="AIquestion">
-      <h2 class="m-plus">Question.</h2>
-      <p class="m-plus">{{ question }}</p>
+    <div class="chat">
+      <div class="AIquestion">
+        <h2 class="m-plus">Question.</h2>
+        <p class="m-plus">{{ question }}</p>
+      </div>
+
+      <div class="userAnswer">
+        <form method="post">
+          <input type="hidden" name="question" value="{{ question }}">
+          <h2 class="m-plus">Answer.</h2>
+          <textarea name="answer" placeholder="あなたの回答を入力してください" rows="4" cols="25"
+            class="m-plus">{{ answer or "" }}</textarea>
+          <button type="submit" class="m-plus">Submit</button>
+        </form>
+      </div>
+
+      <div class="AIresponse">
+
+        <h2 class="m-plus">Response.</h2>
+        {% if response %}
+        <p class="m-plus">{{ response }}</p>
+        {% endif %}
+      </div>
     </div>
 
-    <div class="userAnswer">
-      <form method="post">
-        <input type="hidden" name="question" value="{{ question }}">
-        <h2 class="m-plus">Answer.</h2>
-        <textarea name="answer" placeholder="あなたの回答を入力してください" rows="4" cols="50" class="m-plus">{{ answer or "" }}</textarea>
-        <button type="submit" class="m-plus">Submit</button>
-      </form>
-    </div>
+  
+    <div class="chatlog">
+      <h2 class="m-plus">ChatLog</h2>
+      {% for log in chatLogs %}
 
-
-
-    <div class="AIresponse">
-
-      <h2 class="m-plus">Response.</h2>
-      {% if response %}
-      <p class="m-plus">{{ response }}</p>
-      {% endif %}
-
+      <ul class="log">
+        <li class="m-plus">Question: {{ log.question }}</li>
+        <li class="m-plus">User: {{ log.answer }}</li>
+        <li class="m-plus">Response: {{ log.response }}</li>
+      </ul>
+      {% endfor %}
     </div>
 
   </div>
+
 
 
 

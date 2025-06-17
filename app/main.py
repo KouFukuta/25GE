@@ -12,21 +12,38 @@ app = FastAPI()
 templates = Jinja2Templates(directory="./app/templates")
 app.mount("/static", StaticFiles(directory="./app/static"), name="static")
 
+# チャットのログをWeb側に保存するためのリスト
+chatLogs = []
 
 # モデルとトークナイザーの読み込み
-tokenizer, model = loadModel()
+model, tokenizer = loadModel()
 
 
 # 質問を生成して送信
 @app.get("/", response_class=HTMLResponse)
 def form_get(request: Request):
     question = generateQuestion(tokenizer, model)
-    return templates.TemplateResponse("form.html", {"request": request, "question": question})
+    return templates.TemplateResponse("form.html", {
+        "request": request,
+        "question": question,
+        "chatLogs": chatLogs
+    })
+
 
 
 # インプットを受け取って対話を生成
 @app.post("/", response_class=HTMLResponse)
 def form_post(request: Request, answer: str = Form(...), question: str = Form(...)):
     response = generateResponse(tokenizer, model, question, answer)
+    chatLogs.append({"question": question, "answer": answer, "response": response})
+    
     saveJSON(question, answer)
-    return templates.TemplateResponse("form.html", {"request": request, "question": question, "response": response})
+
+    newQuestion = generateQuestion(tokenizer, model)
+
+    return templates.TemplateResponse("form.html", {
+        "request": request,
+        "question": newQuestion,
+        "response": None,
+        "chatLogs": chatLogs 
+    })

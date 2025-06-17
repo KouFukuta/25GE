@@ -8,13 +8,6 @@ import random as rd
 
 
 def generateQuestion(tokenizer, model):
-    model = AutoModelForCausalLM.from_pretrained(
-        "./output/checkpoint-500"
-    )
-    tokenizer = AutoTokenizer.from_pretrained(
-        "cyberagent/open-calm-small"
-    )
-
     template = {
         "w_input": (
             "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
@@ -58,7 +51,6 @@ def generateQuestion(tokenizer, model):
 
 def generateResponse(tokenizer, model, query, answer):
     # ユーザーに質問を投げる
-
     template = {
         "w_input": (
             "以下はユーザーとの会話の続きです。共感をしながら内容を深堀りしてください。\n\n"
@@ -75,7 +67,7 @@ def generateResponse(tokenizer, model, query, answer):
             "### 応答:\n"
         )
     }
-
+    
     d = {
         "query": query
     }
