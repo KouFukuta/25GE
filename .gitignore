@@ -6,3 +6,6 @@ tunedModels/
 rinna_taiwaTuned/
 output/
 
+#tailwindCSS
+node_modules/
+

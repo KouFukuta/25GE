@@ -282,5 +282,153 @@
   {
     "instruction": "最近、どんな気分ですか?",
     "output": "眠たい"
+  },
+  {
+    "instruction": "最近気になっていること",
+    "output": "気になることがない"
+  },
+  {
+    "instruction": "最近、気になることってありますか?",
+    "output": "特にないんだよね"
+  },
+  {
+    "instruction": "最近、気になる出来事はありませんか?",
+    "output": "米の値段が高すぎること"
+  },
+  {
+    "instruction": "最近、気になる出来事はありませんか?",
+    "output": "米の値段が高すぎること"
+  },
+  {
+    "instruction": "1万円はどこへ\r\n\r\n\r\n2万円はどこへ\r\n\r\n\r\n3万円はどこへ",
+    "output": "散財でどっかいった"
+  },
+  {
+    "instruction": "散財でどっかいった\r\n\r\n\r\n散財でどっかいった\r\n\r\n\r\n散財でど",
+    "output": "そうなの、散財でどっかいったの"
+  },
+  {
+    "instruction": "最近あった楽しい出来事",
+    "output": "サカナクションのライブに行ったよ"
+  },
+  {
+    "instruction": "ライブに行ったよ\r\n\r\n\r\nライブに行ったよ",
+    "output": "そうなの、ライブに行ったの"
+  },
+  {
+    "instruction": "最近、どんな気持ちですか?",
+    "output": "忙しくて少しモヤモヤする時が多いな"
+  },
+  {
+    "instruction": "最近、誰かに嫌われていると感じていませんか?",
+    "output": "あああああ"
+  },
+  {
+    "instruction": "今、何を話したらいいですか?",
+    "output": "なんでもどうぞ"
+  },
+  {
+    "instruction": "最近、人と話すのが苦痛です。どうしたらいいですか?",
+    "output": "無理に話さなくてもいいんじゃね"
+  },
+  {
+    "instruction": "今、どんな気持ちですか?",
+    "output": "aaaaa"
+  },
+  {
+    "instruction": "最近、何をして過ごしていますか?",
+    "output": "ああああああああああああ"
+  },
+  {
+    "instruction": "最近、友達と楽しい出来事はありますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "A  ありがとう\r\n\r\n\r\nA  ○○ってなんですか?",
+    "output": "aaaaaa"
+  },
+  {
+    "instruction": "",
+    "output": "aaaaaaa"
+  },
+  {
+    "instruction": "最近、急に寒くなってきましたね。\r\n\r\n#theme-responsive-interior-interior-changes-interior-interior-interior-changes-changes-interior-changes-changes-changes-changes-ch",
+    "output": "aaaaaaaa"
+  },
+  {
+    "instruction": "A",
+    "output": "aaaaa"
+  },
+  {
+    "instruction": "",
+    "output": "あああああああ"
+  },
+  {
+    "instruction": "質問を募集中です。\r\n\r\n### 質問:",
+    "output": "ああああああああああああ"
+  },
+  {
+    "instruction": "あ、すみません\r\n\r\n\r\n○○さんってどうですか?\r\n\r\n\r\nあ、すみません。\r\n\r\n##",
+    "output": "あああああああ"
+  },
+  {
+    "instruction": "今どんな気分ですか?",
+    "output": "あああああああああああああ"
+  },
+  {
+    "instruction": "今、何してますか?\r\n\r\nあ、そうだ!\r\n\r\n\r\n今、何してますか?",
+    "output": "あああああああああああああああ"
+  },
+  {
+    "instruction": "あ、そうですか?\r\n\r\n\r\nあなたのお母さんは、どうですか?\r\n\r\n\r\nあなたは、どう",
+    "output": "ああああああああああ"
+  },
+  {
+    "instruction": "最近、どんな気持ちですか?",
+    "output": "あああああああ"
+  },
+  {
+    "instruction": "○○さんって、○○くんのこと、好きですか?\r\n\r\nあはは\r\n\r\n\r\n○○さん、いつも",
+    "output": "ああああああああああああ"
+  },
+  {
+    "instruction": "あはは、○○くんのこと、好きですか?\r\n\r\n\r\n○○くんって、○○くんのこと、好きですか?\r\n\r\n##",
+    "output": "ああああああああああああ"
+  },
+  {
+    "instruction": "◯◯さん、○○くんのこと、好きですか?\r\n\r\n\r\n◯◯さん、○○くんのこと、好きですか?",
+    "output": "あああああ"
+  },
+  {
+    "instruction": "最近心がけていることは?",
+    "output": "あああああああああああああああああああああああああ"
+  },
+  {
+    "instruction": "あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、",
+    "output": "あああああああああ"
+  },
+  {
+    "instruction": "あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、",
+    "output": "ああああああああ"
+  },
+  {
+    "instruction": "あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、あ、",
+    "output": "あああああああああああ"
+  },
+  {
+    "instruction": "最近、私の仕事はどういう感じですか?",
+    "output": "aaaaaa"
+  },
+  {
+    "instruction": "##\r\n##\r\n##\r\n##\r\n##\r\n##\r\n#",
+    "output": "aaaaaa"
+  },
+  {
+    "instruction": "#\r\n\r\n\r\n\r\n\r\n#",
+    "output": "aaaaaa"
+  },
+  {
+    "instruction": "# 言葉:",
+    "output": "aaaa"
   }
 ]

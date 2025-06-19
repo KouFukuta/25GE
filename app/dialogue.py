@@ -1,8 +1,6 @@
-from .config import DEVICE
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from pathlib import Path
-import random as rd
 
 # ユーザーに対する質問を作成
 
