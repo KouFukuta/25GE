@@ -18,7 +18,7 @@
   <!-- normalizecss -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
   <!-- tailwindcss -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <!-- css -->
   <link rel="stylesheet" href="../static/style.css">
 
@@ -27,11 +27,13 @@
 
 <body>
   <div class="header">
+    <img class="logo" src="/static/images/IMG_1320.PNG" alt="">
     <h1 class="m-plus custom-h1">test.</h1>
   </div>
 
-  <div class="container">
+    <img class="character" id="aiCharacter" src="/static/images/IMG_1317.PNG" alt="">
 
+  <div class="container">
 
     <div class="question-form">
       <h2 class="m-plus custom-h2">Question.</h2>
@@ -59,7 +61,8 @@
         <div class="m-plus AI-response">Question: {{ log.question }}</div>
         {% endif %}
         <div class="m-plus user-input">User: {{ log.answer }}</div>
-        <div class="m-plus AI-response">Response: {{ log.response }}</div>
+        <div class="m-plus AI-response typewriter" data-text="{{ log.response }}">{{ log.response }}</div>
+
       </div>
       {% endfor %}
     </div>
@@ -74,6 +77,47 @@
         chatContainer.scrollTop = chatContainer.scrollHeight;
       }
     });
+
+    function typeWriterEffect(el, text, delay = 30) {
+      el.textContent = "";
+      let i = 0;
+
+      const interval = setInterval(() => {
+        el.textContent += text[i];
+        i++;
+        if (i >= text.length) {
+          clearInterval(interval);
+          stopTalking();
+        }
+      }, delay);
+    }
+
+    function startTalking() {
+      const char = document.getElementById("aiCharacter");
+      if (char) char.classList.add("talking");
+    }
+
+    function stopTalking() {
+      const char = document.getElementById("aiCharacter");
+      if (char) char.classList.remove("talking");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const responses = document.querySelectorAll(".typewriter");
+      if (responses.length > 0) {
+        const last = responses[responses.length - 1];
+        const text = last.dataset.text;
+        startTalking();
+        typeWriterEffect(last, text);
+      }
+
+      const chatContainer = document.getElementById("chat-log");
+      if (chatContainer) {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+    });
+
+
   </script>
 
 </body>
