@@ -55,10 +55,11 @@
 
     <div id="chat-log">
       <h2 class="m-plus custom-h2">ChatLog</h2>
+      
       {% for log in chatLogs %}
       <div class="log-list">
         {% if log.question %}
-        <div class="m-plus AI-response">Question: {{ log.question }}</div>
+        <div class="m-plus AI-response">{{ log.question }}</div>
         {% endif %}
         <div class="m-plus user-input">User: {{ log.answer }}</div>
         <div class="m-plus AI-response typewriter" data-text="{{ log.response }}">{{ log.response }}</div>

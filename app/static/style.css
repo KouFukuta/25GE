@@ -74,7 +74,7 @@ body {
 }
 
 .talking {
-    animation: bobbing 0.4s ease-in-out infinite;
+    animation: bobbing 0.1s infinite;
 }
 
 
@@ -116,6 +116,7 @@ body {
     top: 0;
     left: 0;
     overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
 .log-list {
@@ -129,7 +130,7 @@ body {
     word-break: break-word;
     margin-right: auto;
     padding: 1rem;
-    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 0.5);
     margin-bottom: 1rem;
 }
 
@@ -139,6 +140,6 @@ body {
     word-break: break-word;
     margin-left: auto;
     padding: 1rem;
-    background-color: #dcdcdc;
+    background-color: rgba(220, 220, 220, 0.5);;
     margin-bottom: 1rem;
 }
