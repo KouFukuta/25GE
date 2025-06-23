@@ -152,6 +152,14 @@ body {
     scrollbar-width: thin;
 }
 
+.chat-log-header {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .log-list {
     display: flex;
     flex-direction: column;

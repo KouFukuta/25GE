@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyndHound</title>
 
+  <!-- fabicon -->
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/static/images/500icon.svg">
+  <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+
+
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,8 +63,6 @@
 
 
     <div id="chat-log">
-      <h2 class="dotgothic custom-h2">ChatLog</h2>
-
       {% for log in chatLogs %}
       <div class="log-list">
         {% if log.question %}
