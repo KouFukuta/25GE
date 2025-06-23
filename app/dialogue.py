@@ -82,7 +82,7 @@ def generateResponse(tokenizer, model, query, answer):
     with torch.no_grad():
         tokens = model.generate(
             input,
-            max_new_tokens=32,
+            max_new_tokens=64,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
             temperature=0.7,

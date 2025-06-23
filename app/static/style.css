@@ -19,6 +19,13 @@ body {
     font-style: normal;
 }
 
+.dotgothic {
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .custom-h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -29,6 +36,11 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 12px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* style */
@@ -42,10 +54,21 @@ body {
     height: 75px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.header-menu
+{
+    list-style: none;
+    display: flex;
+}
+
+.header-menu li {
+    margin: 0 20px;
 }
 
 .logo {
-    width: 75px;
+    width: auto;
     height: 75px;
 }
 
@@ -59,6 +82,12 @@ body {
     z-index: -10;
 }
 
+/* 待機モーション */
+.idle {
+    animation: idle 2s infinite;
+}
+
+/* 話す時のアニメーションを追加 */
 @keyframes bobbing {
     0% {
         transform: translateY(0);
@@ -92,6 +121,10 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.question-container {
+    overflow-y: auto;
 }
 
 .form-container {

@@ -6,13 +6,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>app</title>
+  <title>MyndHound</title>
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+1p:wght@300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
 
   <!-- normalizecss -->
@@ -27,42 +27,46 @@
 
 <body>
   <div class="header">
-    <img class="logo" src="/static/images/IMG_1320.PNG" alt="">
-    <h1 class="m-plus custom-h1">test.</h1>
+    <img class="logo" src="/static/images/MyndHound_logo.svg" alt="logo">
+
+    <ul class="header-menu">
+      <li><a href="#" class="dotgothic">about</a></li>
+      <li><a href="#" class="dotgothic">how to</a></li>
+    </ul>
+
   </div>
 
-    <img class="character" id="aiCharacter" src="/static/images/IMG_1317.PNG" alt="">
+  <img class="character" id="aiCharacter" src="/static/images/IMG_1317.PNG" alt="">
 
   <div class="container">
 
     <div class="question-form">
-      <h2 class="m-plus custom-h2">Question.</h2>
-      <p class="m-plus">{{ question }}</p>
+      <h2 class="dotgothic custom-h2">Question.</h2>
+      <p class="dotgothic question-container">{{ question }}</p>
 
       <form method="post">
         <input type="hidden" name="question" value="{{ question }}">
-        <h2 class="m-plus custom-h2">Answer.</h2>
+        <h2 class="dotgothic custom-h2">Answer.</h2>
 
         <div class="form-container">
           <textarea name="answer" placeholder="あなたの回答を入力してください"
-            class="m-plus form-textarea">{{ answer or "" }}</textarea>
-          <button type="submit" class="m-plus form-submit">Submit</button>
+            class="dotgothic form-textarea">{{ answer or "" }}</textarea>
+          <button type="submit" class="dotgothic form-submit">Submit</button>
         </div>
       </form>
     </div>
 
 
-
     <div id="chat-log">
-      <h2 class="m-plus custom-h2">ChatLog</h2>
-      
+      <h2 class="dotgothic custom-h2">ChatLog</h2>
+
       {% for log in chatLogs %}
       <div class="log-list">
         {% if log.question %}
-        <div class="m-plus AI-response">{{ log.question }}</div>
+        <div class="dotgothic AI-response">{{ log.question }}</div>
         {% endif %}
-        <div class="m-plus user-input">User: {{ log.answer }}</div>
-        <div class="m-plus AI-response typewriter" data-text="{{ log.response }}">{{ log.response }}</div>
+        <div class="dotgothic user-input">User: {{ log.answer }}</div>
+        <div class="dotgothic AI-response typewriter" data-text="{{ log.response }}">{{ log.response }}</div>
 
       </div>
       {% endfor %}
@@ -71,6 +75,8 @@
   </div>
 
   <script>
+
+    // ページ読み込み時にスクロールを一番下にする
     document.addEventListener("DOMContentLoaded", () => {
       const chatContainer = document.getElementById("chat-log");
       if (chatContainer) {
@@ -93,6 +99,22 @@
       }, delay);
     }
 
+    // キャラクター待機モーション、尻尾振り
+    const imagePaths = [
+      "/static/images/IMG_1317.PNG",
+      "/static/images/IMG_1326.png",
+    ];
+
+    let currentIndex = 0;
+    const imageElement = document.getElementById("aiCharacter");
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % imagePaths.length;
+      imageElement.src = imagePaths[currentIndex];
+    }, 1000); // 1000ミリ秒 = 1秒
+
+    // キャラクターのアニメーション
+    // 話す時
     function startTalking() {
       const char = document.getElementById("aiCharacter");
       if (char) char.classList.add("talking");
@@ -103,6 +125,7 @@
       if (char) char.classList.remove("talking");
     }
 
+    // ページ読み込み時に最後のレスポンスをタイプライター効果で表示
     document.addEventListener("DOMContentLoaded", () => {
       const responses = document.querySelectorAll(".typewriter");
       if (responses.length > 0) {
@@ -111,13 +134,12 @@
         startTalking();
         typeWriterEffect(last, text);
       }
-
+      // スクロールを一番下にする
       const chatContainer = document.getElementById("chat-log");
       if (chatContainer) {
         chatContainer.scrollTop = chatContainer.scrollHeight;
       }
     });
-
 
   </script>
 
