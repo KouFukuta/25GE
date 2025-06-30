@@ -26,20 +26,24 @@ def generateQuestion(tokenizer, model):
 
     ptext = template['wo_input'].format_map(d)
 
-    input = tokenizer.encode(
+    inputs = tokenizer.encode_plus(
         ptext,
-        return_tensors="pt"
+        return_tensors="pt",
+        padding=True,
     )
-    start_pos = len(input[0])
+    start_pos = inputs['input_ids'].shape[1]
     with torch.no_grad():
+        print(f"Starting generation, input shape: {inputs['input_ids'].shape}")
         tokens = model.generate(
-            input,
+            inputs['input_ids'],
+            attention_mask=inputs['attention_mask'],
             max_new_tokens=64,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
             temperature=0.7,
             top_p=0.9,
         )
+        print("Generated token IDs:", tokens)  # ★ここ追加！
 
     query = tokenizer.decode(tokens[0][start_pos:], skip_special_tokens=True)
     print(query)
@@ -74,14 +78,16 @@ def generateResponse(tokenizer, model, query, answer):
 
     ptext = template['wo_input'].format_map(d)
 
-    input = tokenizer.encode(
+    inputs = tokenizer.encode_plus(
         ptext,
-        return_tensors="pt"
+        return_tensors="pt",
+        padding=True,
     )
-    start_pos = len(input[0])
+    start_pos = inputs['input_ids'].shape[1]
     with torch.no_grad():
         tokens = model.generate(
-            input,
+            inputs['input_ids'],
+            attention_mask=inputs['attention_mask'],
             max_new_tokens=64,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,

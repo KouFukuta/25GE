@@ -9,7 +9,7 @@ TOKENIZER_USE_FAST = False
 TRUST_REMOTE_CODE = True
 LOCAL_FILES_ONLY = True
 
-CHAT_DATASET_PATH = Path("../chatLog/chatLog.json").resolve()
+CHAT_DATASET_PATH = str("./chatLog/chatLog.json")
 
 # チャットログの保存場所
 CHAT_LOG_PATH = Path("chatLog/chatLog.json")

@@ -3,12 +3,48 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import uuid
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime
+from pytz import timezone
+from contextlib import asynccontextmanager
 
 from .modelLoader import loadModel
 from .dialogue import generateQuestion, generateResponse
 from .chatLog import saveJSON
+from .fineTune import startFinetuning
 
-app = FastAPI()
+# スケジューラの初期化
+scheduler = BackgroundScheduler()
+scheduler.configure(timezone=timezone("Asia/Tokyo"))
+# ファインチューニングを毎日0時に実行
+def scheduled_finetune_job():
+    print("starting scheduled fine-tuning job...")
+    save_path = startFinetuning()
+    print(f"saved model: {save_path}")
+
+    new_model, new_tokenizer = loadModel()
+    update_model_tokenizer(new_model, new_tokenizer)
+
+    print("updated model and tokenizer！")
+
+def update_model_tokenizer(new_model, new_tokenizer):
+    global model, tokenizer
+    model = new_model
+    tokenizer = new_tokenizer
+
+scheduler.add_job(scheduled_finetune_job, 'cron', hour=0, minute=0)
+
+
+# FastAPIを lifespan付きで最初から定義
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("0:00 Starting scheduled job for fine-tuning...")
+    scheduler.start()
+    yield
+    scheduler.shutdown()
+
+
+app = FastAPI(lifespan=lifespan)
 templates = Jinja2Templates(directory="./app/templates")
 app.mount("/static", StaticFiles(directory="./app/static"), name="static")
 
