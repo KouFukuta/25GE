@@ -16,6 +16,7 @@ from .fineTune import startFinetuning
 # スケジューラの初期化
 scheduler = BackgroundScheduler()
 scheduler.configure(timezone=timezone("Asia/Tokyo"))
+
 # ファインチューニングを毎日0時に実行
 def scheduled_finetune_job():
     print("starting scheduled fine-tuning job...")
@@ -32,7 +33,7 @@ def update_model_tokenizer(new_model, new_tokenizer):
     model = new_model
     tokenizer = new_tokenizer
 
-scheduler.add_job(scheduled_finetune_job, 'cron', hour=0, minute=0)
+scheduler.add_job(scheduled_finetune_job, 'cron', hour=15, minute=51)
 
 
 # FastAPIを lifespan付きで最初から定義

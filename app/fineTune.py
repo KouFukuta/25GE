@@ -7,25 +7,65 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import datasets
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 import re
 
 from .config import TOKENIZER_PATH
 
 def startFinetuning():
-    #モデルの読み込み
-    model_name = "cyberagent/open-calm-small"
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.bfloat16,
-    )
+    # 昨日の日付の文字列を取得
+    yesterday_str = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+    save_path = Path(f"./tunedModels/{yesterday_str}")
+
+    last_checkpoint = None
+    if save_path.exists():
+        checkpoints = []
+        for d in save_path.glob("checkpoint-*"):
+            if d.is_dir():
+                m = re.search(r'checkpoint-(\d+)', d.name)
+                if m:
+                    checkpoints.append((int(m.group(1)), d))
+
+        if checkpoints:
+            last_checkpoint = max(checkpoints, key=lambda x: x[0])[1]
+
+    if last_checkpoint:
+        print(f"Loading fine-tuned model from: {last_checkpoint}")
+        model = AutoModelForCausalLM.from_pretrained(
+            last_checkpoint,
+            local_files_only=True,
+            torch_dtype=torch.bfloat16
+        )
+    else:
+        # 昨日のモデルが見つからなかった場合、firstModel を使う
+        fallback_checkpoint = Path("./tunedModels/firstModel/checkpoint-500")
+        if fallback_checkpoint.exists():
+            print(f"No model for yesterday. Loading fallback model: {fallback_checkpoint}")
+            model = AutoModelForCausalLM.from_pretrained(
+                fallback_checkpoint,
+                local_files_only=True,
+                torch_dtype=torch.bfloat16
+            )
+    
+    # #モデルの読み込み
+    # model_name = "cyberagent/open-calm-small"
+    # model = AutoModelForCausalLM.from_pretrained(
+    #     model_name,
+    #     torch_dtype=torch.bfloat16,
+    # )
     
     tokenizer = AutoTokenizer.from_pretrained(
-        model_name
+        TOKENIZER_PATH
     )
-
-    query = datasets.load_dataset("json", data_files=CHAT_DATASET_PATH)
+    
+    # 昨日のデータセットの読み込み
+    yesterday_data_path = Path(f"./chatLog/{yesterday_str}")
+    if not yesterday_data_path.exists():
+        # 昨日のデータセットが存在しない場合はエラーメッセージを表示
+        print(f"Yesterday's data not found: {yesterday_data_path}")
+        return
+    query = datasets.load_dataset("json", data_files=yesterday_data_path)
 
     # テンプレートの設定
     template = {

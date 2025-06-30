@@ -2,9 +2,12 @@
 from .config import CHAT_LOG_PATH
 import json
 from pathlib import Path
+from datetime import datetime
 
 def saveJSON(input, output):
-    file = CHAT_LOG_PATH
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    save_path = Path(f"./chatLog/{today_str}")
+    file = save_path
     
     if file.exists():
         with open(file, "r", encoding="utf-8") as f:
