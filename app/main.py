@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Form, Request, Response, Cookie
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import uuid
@@ -33,7 +33,7 @@ def update_model_tokenizer(new_model, new_tokenizer):
     model = new_model
     tokenizer = new_tokenizer
 
-scheduler.add_job(scheduled_finetune_job, 'cron', hour=15, minute=51)
+scheduler.add_job(scheduled_finetune_job, 'cron', hour=20, minute=28)
 
 
 # FastAPIを lifespan付きで最初から定義
@@ -65,49 +65,49 @@ session_first_request = {}
 
 # GET: 質問を生成
 @app.get("/", response_class=HTMLResponse)
-def form_get(request: Request, response: Response, session_id: str = Cookie(default=None)):
-    session_id = get_or_create_session_id(session_id)
-    response.set_cookie(key="session_id", value=session_id)
-
-    question = generateQuestion(tokenizer, model)
-
-    # セッションごとのログと初回フラグを初期化
+def form_get(request: Request, session_id: str = None):
+    # セッションIDがURLパラメータにない場合は、新規生成してリダイレクト
+    if not session_id:
+        new_id = str(uuid.uuid4())
+        return RedirectResponse(url=f"/?session_id={new_id}")
+    
+    # ログ管理
     session_logs.setdefault(session_id, [])
     session_first_request.setdefault(session_id, True)
+
+    question = generateQuestion(tokenizer, model)
 
     return templates.TemplateResponse("form.html", {
         "request": request,
         "question": question,
-        "chatLogs": session_logs[session_id]
+        "chatLogs": session_logs[session_id],
+        "session_id": session_id,  # テンプレートにも渡す
     })
 
 # POST: 回答を受け取って応答を生成
 @app.post("/", response_class=HTMLResponse)
 def form_post(
     request: Request,
-    response: Response,
     answer: str = Form(...),
     question: str = Form(...),
-    session_id: str = Cookie(default=None)
+    session_id: str = Form(...),  # URLじゃなくフォームのhiddenから
 ):
-    session_id = get_or_create_session_id(session_id)
-    response.set_cookie(key="session_id", value=session_id)
-
     chat_log = session_logs.setdefault(session_id, [])
-    is_first = session_first_request.get(session_id, True)
 
     response_text = generateResponse(tokenizer, model, question, answer)
 
-    if is_first:
-        chat_log.append({"question": question, "answer": answer, "response": response_text})
-        session_first_request[session_id] = False
-    else:
-        chat_log.append({"answer": answer, "response": response_text})
+    # 履歴に今回のやりとりを追加
+    chat_log.append({
+        "question": question,
+        "answer": answer,
+        "response": response_text,
+    })
 
     saveJSON(question, answer)
 
     return templates.TemplateResponse("form.html", {
         "request": request,
         "question": response_text,
-        "chatLogs": chat_log
+        "chatLogs": chat_log,
+        "session_id": session_id,
     })

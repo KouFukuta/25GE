@@ -46,6 +46,7 @@
       <p class="dotgothic question-container">{{ question }}</p>
 
       <form method="post">
+        <input type="hidden" name="session_id" value="{{ session_id }}">
         <input type="hidden" name="question" value="{{ question }}">
         <h2 class="dotgothic custom-h2">Answer.</h2>
 
@@ -61,7 +62,8 @@
     <div id="chat-log">
       {% for log in chatLogs %}
       <div class="log-list">
-        {% if log.question %}
+        {% if loop.index0 == 0 %}
+        <!-- 最初のログだけ質問も表示 -->
         <div class="dotgothic AI-response">{{ log.question }}</div>
         {% endif %}
         <div class="dotgothic user-input">User: {{ log.answer }}</div>
@@ -69,6 +71,7 @@
       </div>
       {% endfor %}
     </div>
+
 
   </div>
 

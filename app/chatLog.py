@@ -6,7 +6,7 @@ from datetime import datetime
 
 def saveJSON(input, output):
     today_str = datetime.now().strftime("%Y-%m-%d")
-    save_path = Path(f"./chatLog/{today_str}")
+    save_path = Path(f"./chatLog/{today_str}.json")
     file = save_path
     
     if file.exists():
