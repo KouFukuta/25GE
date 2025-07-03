@@ -84,6 +84,8 @@ def form_get(request: Request, session_id: str = None):
         "session_id": session_id,  # テンプレートにも渡す
     })
 
+
+
 # POST: 回答を受け取って応答を生成
 @app.post("/", response_class=HTMLResponse)
 def form_post(
@@ -93,8 +95,17 @@ def form_post(
     session_id: str = Form(...),  # URLじゃなくフォームのhiddenから
 ):
     chat_log = session_logs.setdefault(session_id, [])
+    recent_logs = chat_log[-5:]
+    history_text = ""
+    for log in recent_logs:
+        history_text += f"Question: {log['question']}\n"
+        history_text += f"User: {log['answer']}\n"
+        history_text += f"AI: {log['response']}\n"
+    
+    # 今回の質問を履歴に加える
+    full_context = f"{history_text}Question: {question}\n"
 
-    response_text = generateResponse(tokenizer, model, question, answer)
+    response_text = generateResponse(tokenizer, model, full_context, answer)
 
     # 履歴に今回のやりとりを追加
     chat_log.append({
