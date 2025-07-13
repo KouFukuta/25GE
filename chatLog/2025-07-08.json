@@ -1,0 +1,122 @@
+[
+  {
+    "instruction": "最近、何をしてる?",
+    "output": "こんばんは"
+  },
+  {
+    "instruction": "今日は何の日?",
+    "output": "今日は七夕の次の日"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "最近心がけていることは?",
+    "output": "早く寝ること"
+  },
+  {
+    "instruction": "最近心がけていることは?",
+    "output": "早く寝ること"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日\r\n\r\n\r\n今日は七夕の日",
+    "output": "あいうえお"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "早く寝ることは?\r\n\r\n\r\nおやすみ\r\n\r\n\r\nおやすみ",
+    "output": "おやすみ"
+  },
+  {
+    "instruction": "最近、何をしてますか?",
+    "output": "最近はずっと開発をしているよ"
+  },
+  {
+    "instruction": "最近ストレスを感じたことはありますか?",
+    "output": "最近のストレスはないです"
+  },
+  {
+    "instruction": "今、何をして過ごしていますか?",
+    "output": ""
+  },
+  {
+    "instruction": "今、何をして過ごしていますか?",
+    "output": ""
+  },
+  {
+    "instruction": "最近ストレスを感じたことはありますか?",
+    "output": "最近のストレスはないです"
+  },
+  {
+    "instruction": "最近ストレスはありましたか?\r\n\r\n\r\n最近ストレスはありましたか?\r\n\r\n\r\nストレスはありません",
+    "output": "あおいえお"
+  },
+  {
+    "instruction": "はい\r\n\r\n\r\n最近ストレスはありましたか?\r\n\r\n最近ストレスはありましたか?\r\n\r\n最近ストレスはありましたか?",
+    "output": "あああ"
+  }
+]

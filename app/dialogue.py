@@ -37,7 +37,7 @@ def generateQuestion(tokenizer, model):
         tokens = model.generate(
             inputs['input_ids'],
             attention_mask=inputs['attention_mask'],
-            max_new_tokens=64,
+            max_new_tokens=32,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
             temperature=0.7,
@@ -88,7 +88,7 @@ def generateResponse(tokenizer, model, query, answer):
         tokens = model.generate(
             inputs['input_ids'],
             attention_mask=inputs['attention_mask'],
-            max_new_tokens=64,
+            max_new_tokens=32,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
             temperature=0.7,

@@ -78,7 +78,7 @@ body {
 
     position: absolute;
     top: 0;
-    left: calc(50% - 250px);
+    left: calc(50% - 275px);
     z-index: -10;
 }
 
@@ -109,7 +109,7 @@ body {
 
 .container {
     width: 80%;
-    height: calc(100vh - 75px);
+    height: calc(100% - 75px);
     margin: 0 auto;
     position: relative;
 
@@ -201,7 +201,7 @@ body {
 
     .container {
         width: 90%;
-        height: calc(100dvh - 60px);
+        height: calc(100% - 60px);
     }
 
     .header {
@@ -217,13 +217,16 @@ body {
     }
 
     .question-form {
-        height: 150px;
+        height: 275px;
         position: absolute;
         bottom: 0;
-        z-index: 5;
     }
 
     #chat-log {
-        height: calc(100dvh - 60px - 150px);
+        height: calc(100% - 275px);
+    }
+
+    .form-submit {
+        color: black;
     }
 }

@@ -12,6 +12,7 @@ from .modelLoader import loadModel
 from .dialogue import generateQuestion, generateResponse
 from .chatLog import saveJSON
 from .fineTune import startFinetuning
+from .generate import generateAnswer
 
 # スケジューラの初期化
 scheduler = BackgroundScheduler()
@@ -120,5 +121,57 @@ def form_post(
         "request": request,
         "question": response_text,
         "chatLogs": chat_log,
+        "session_id": session_id,
+    })
+    
+    
+# -----普通のAIとして使う場所-----
+
+@app.get("/generate", response_class=HTMLResponse)
+def form_get(request: Request, session_id: str = None):
+    # セッションIDがURLパラメータにない場合は、新規生成してリダイレクト
+    if not session_id:
+        new_id = str(uuid.uuid4())
+        return RedirectResponse(url=f"/generate?session_id={new_id}")
+
+    
+    # ログ管理
+    session_logs.setdefault(session_id, [])
+    session_first_request.setdefault(session_id, True)
+
+    return templates.TemplateResponse("generate.html", {
+        "request": request,
+        "chatLogs": session_logs[session_id],
+        "session_id": session_id,  # テンプレートにも渡す
+    })
+
+
+
+@app.post("/generate", response_class=HTMLResponse)
+def generate_post(
+    request: Request,
+    question: str = Form(...),
+    session_id: str = Form(...),  # URLじゃなくフォームのhiddenから
+):
+    Gen_chat_log = session_logs.setdefault(session_id, [])
+    
+    # 履歴を生成
+    history_text = ""
+    for log in Gen_chat_log:
+        history_text += f"Question: {log['question']}\n"
+        history_text += f"User: {log['answer']}\n"
+
+    response_text = generateAnswer(tokenizer, model, question)
+
+    # 履歴に今回のやりとりを追加
+    Gen_chat_log.append({
+        "question": question,
+        "answer": response_text,
+    })
+
+    return templates.TemplateResponse("generate.html", {
+        "request": request,
+        "response": response_text,
+        "chatLogs": Gen_chat_log,
         "session_id": session_id,
     })
