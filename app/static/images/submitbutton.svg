@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y="0" width="50" height="50"/>
+  <path class="cls-2" d="M16.26,21.52v-3.5h3.48v3.5h-3.48ZM19.74,18.01v-3.5h3.5v-3.48h3.48v3.48h3.5v3.5h-3.5v20.96h-3.48v-20.96h-3.5ZM30.24,21.52v-3.5h3.5v3.5h-3.5Z"/>
+</svg>

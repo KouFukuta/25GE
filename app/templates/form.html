@@ -33,31 +33,12 @@
     <img class="logo" src="/static/images/MyndHound_logo.svg" alt="logo">
 
     <ul class="header-menu">
-      <li><a href="#" class="dotgothic">about</a></li>
-      <li><a href="/generate" class="dotgothic">generate</a></li>
+      <li><a href="/generate" class="dotgothic">生成する</a></li>
     </ul>
 
   </div>
 
   <div class="container">
-    <img class="character" id="aiCharacter" src="/static/images/IMG_1317.PNG" alt="">
-    <div class="question-form">
-      <h2 class="dotgothic custom-h2">Question.</h2>
-      <p class="dotgothic question-container">{{ question }}</p>
-
-      <form id="teachAI-form" method="post">
-        <input type="hidden" name="session_id" value="{{ session_id }}">
-        <input type="hidden" name="question" value="{{ question }}">
-        <h2 class="dotgothic custom-h2">Answer.</h2>
-
-        <div class="form-container">
-          <textarea id="messageInput" name="answer" placeholder="あなたの回答を入力してください"
-            class="dotgothic form-textarea">{{ answer or "" }}</textarea>
-          <button type="submit" class="dotgothic form-submit">Submit</button>
-        </div>
-      </form>
-    </div>
-
 
     <div id="chat-log">
       {% for log in chatLogs %}
@@ -71,6 +52,33 @@
       </div>
       {% endfor %}
     </div>
+
+    <img class="character" id="aiCharacter" src="/static/images/IMG_1317.PNG" alt="">
+
+    <div class="question-form">
+      <div class="question-section">
+        <p class="dotgothic question-container ">{{ question }}</p>
+      </div>
+
+      <div class="answer-section">
+        <form id="teachAI-form" method="post">
+          <input type="hidden" name="session_id" value="{{ session_id }}">
+          <input type="hidden" name="question" value="{{ question }}">
+
+          <div class="form-container">
+            <textarea id="messageInput" name="answer" placeholder="質問に答えてみよう！"
+              class="dotgothic form-textarea">{{ answer or "" }}</textarea>
+            <p class="dotgothic warning">※個人情報などを含む内容は送信しないでください。AIが学習してしまい、全ユーザーに公開される恐れがあります。</p>
+            <button type="submit" class="form-submit"><img src="/static/images/submitbutton.svg" alt="submit"></button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+
+
 
 
   </div>
@@ -141,7 +149,30 @@
         chatContainer.scrollTop = chatContainer.scrollHeight;
       }
     });
-    
+
+    // Enterで送信する
+    const textarea = document.getElementById("messageInput");
+
+    textarea.addEventListener("keydown", function (e) {
+      // Shift+Enter なら改行
+      if (e.key === "Enter" && e.shiftKey) return;
+
+      // Enterのみ（送信処理）
+      if (e.key === "Enter") {
+        e.preventDefault(); // 改行キャンセル
+
+        // 空かどうかチェック（空白だけも除外）
+        const text = this.value.trim();
+        if (text === "") {
+          // 必要なら警告表示もできるよ
+          alert("テキストを入力してください！");
+          return;
+        }
+
+        this.form.submit();
+      }
+    });
+
 
   </script>
 

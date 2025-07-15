@@ -134,7 +134,6 @@ def form_get(request: Request, session_id: str = None):
         new_id = str(uuid.uuid4())
         return RedirectResponse(url=f"/generate?session_id={new_id}")
 
-    
     # ログ管理
     session_logs.setdefault(session_id, [])
     session_first_request.setdefault(session_id, True)
@@ -144,8 +143,6 @@ def form_get(request: Request, session_id: str = None):
         "chatLogs": session_logs[session_id],
         "session_id": session_id,  # テンプレートにも渡す
     })
-
-
 
 @app.post("/generate", response_class=HTMLResponse)
 def generate_post(

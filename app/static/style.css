@@ -106,45 +106,24 @@ body {
     animation: bobbing 0.1s infinite;
 }
 
+/* container */
 
 .container {
-    width: 80%;
+    width: 1000px;
     height: calc(100% - 75px);
     margin: 0 auto;
     position: relative;
 
 }
 
-.question-form {
-    width: 100%;
-    height: 250px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
+/* ここまでcontainer */
 
-.question-container {
-    overflow-y: auto;
-}
 
-.form-container {
-    display: flex;
-    align-items: end;
-}
-
-.form-textarea {
-    width: 90%;
-    height: 100px;
-    resize: none;
-}
-
-.form-submit {
-    cursor: pointer;
-}
+/* ここからログ */
 
 #chat-log {
     width: 100%;
-    height: calc(100vh - 75px - 250px);
+    height: calc(100vh - 75px - 250px - 20px);
     position: absolute;
     top: 0;
     left: 0;
@@ -185,48 +164,87 @@ body {
     margin-bottom: 1rem;
 }
 
+/* ここまでログ */
+
+/* ここからフォーム */
+
+.question-form {
+    width: 100%;
+    height: 245px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.question-section {
+    width: 100%;
+    height: 85px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: rgba(181, 181, 181, 0.585);
+}
+
+.question-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 225px;
+  border-width: 0 10px 30px 40px;
+  border-style: solid;
+  border-color: transparent transparent rgba(181, 181, 181, 0.585) transparent;
+}
+
+.question-container {
+    width: 95%;
+    font-size: 21px;
+    margin: 0 auto;
+}
+
+.answer-section {
+    width: 100%;
+    height: 145px;
+    border: 2px solid #7F7F7F;
+
+    position: absolute;
+    bottom: 0;
+}
+
+#teachAI-form {
+    width: 100%;
+    height: 100px;
+}
+
+#messageInput {
+    display: block;
+    width: 95%;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 16px;
+    resize: none;
+}
+
+.form-submit
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.warning {
+    color: #808080;
+    font-size: 12px;
+    
+    position: absolute;
+    bottom: 10px;
+    left: 2.5%;
+}
+
+/* ここまでフォーム */
+
 
 /* responsive */
-@media screen and (max-width: 768px) {
-    body {
-        width: 100vw;
-        height: 100dvh;
-    }
-
-    .character {
-        width: 300px;
-        left: calc(50% - 150px);
-        top: 10%;
-    }
-
-    .container {
-        width: 90%;
-        height: calc(100% - 60px);
-    }
-
-    .header {
-        height: 60px;
-    }
-
-    .logo {
-        height: 60px;
-    }
-
-    .header-menu li {
-        margin: 0 10px;
-    }
-
-    .question-form {
-        height: 275px;
-        position: absolute;
-        bottom: 0;
-    }
-
-    #chat-log {
-        height: calc(100% - 275px);
-    }
-
-    .form-submit {
-        color: black;
-    }
-}
