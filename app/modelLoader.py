@@ -6,6 +6,19 @@ from pathlib import Path
 from datetime import datetime
 import re
 
+def loadModelForQuestion():
+    Qmodel = AutoModelForCausalLM.from_pretrained(
+        "./tunedModels/prototype_fukabori/checkpoint-150",
+        local_files_only=True
+    )
+    Qtokenizer = AutoTokenizer.from_pretrained(
+        TOKENIZER_PATH
+    )
+    print("Successfully loaded question Model and tokenizer.")
+
+    return Qmodel, Qtokenizer
+
+
 def loadModel():
     today_str = datetime.now().strftime("%Y-%m-%d")
     save_path = Path(f"./tunedModels/{today_str}")
@@ -30,14 +43,13 @@ def loadModel():
         )
     else:
         # 今日のファインチューニングモデルが見つからなかった場合、firstModel を使う
-        fallback_checkpoint = Path("./tunedModels/firstModel/checkpoint-500")
-        if fallback_checkpoint.exists():
-            print(f"No model for today. Loading fallback model: {fallback_checkpoint}")
-            model = AutoModelForCausalLM.from_pretrained(
-                fallback_checkpoint,
-                local_files_only=True
-            )
-        else:
+        fallback_checkpoint = "cyberagent/open-calm-small"
+        print(f"No model for today. Loading fallback model: {fallback_checkpoint}")
+        model = AutoModelForCausalLM.from_pretrained(
+            fallback_checkpoint
+        )
+
+        if not model:
             raise FileNotFoundError(
                 f"Neither today's model nor fallback checkpoint found. "
                 f"Looked for: {save_path} and {fallback_checkpoint}"

@@ -49,3 +49,4 @@ def generateAnswer(tokenizer, model, query):
     print(response)
     
     return response
+

@@ -38,22 +38,14 @@ def startFinetuning():
             torch_dtype=torch.bfloat16
         )
     else:
-        # 昨日のモデルが見つからなかった場合、firstModel を使う
-        fallback_checkpoint = Path("./tunedModels/firstModel/checkpoint-500")
-        if fallback_checkpoint.exists():
-            print(f"No model for yesterday. Loading fallback model: {fallback_checkpoint}")
-            model = AutoModelForCausalLM.from_pretrained(
-                fallback_checkpoint,
-                local_files_only=True,
-                torch_dtype=torch.bfloat16
-            )
+        # 昨日のモデルが見つからなかった場合、open-calm-small を使う
+        fallback_checkpoint = "cyberagent/opencalm-small"
+        print(f"No model for yesterday. Loading fallback model: {fallback_checkpoint}")
+        model = AutoModelForCausalLM.from_pretrained(
+            fallback_checkpoint,
+            torch_dtype=torch.bfloat16
+        )
     
-    # #モデルの読み込み
-    # model_name = "cyberagent/open-calm-small"
-    # model = AutoModelForCausalLM.from_pretrained(
-    #     model_name,
-    #     torch_dtype=torch.bfloat16,
-    # )
     
     tokenizer = AutoTokenizer.from_pretrained(
         TOKENIZER_PATH

@@ -8,7 +8,7 @@ from datetime import datetime
 from pytz import timezone
 from contextlib import asynccontextmanager
 
-from .modelLoader import loadModel
+from .modelLoader import loadModel, loadModelForQuestion
 from .dialogue import generateQuestion, generateResponse
 from .chatLog import saveJSON
 from .fineTune import startFinetuning
@@ -34,7 +34,7 @@ def update_model_tokenizer(new_model, new_tokenizer):
     model = new_model
     tokenizer = new_tokenizer
 
-scheduler.add_job(scheduled_finetune_job, 'cron', hour=20, minute=28)
+scheduler.add_job(scheduled_finetune_job, 'cron', hour=0, minute=0)
 
 
 # FastAPIを lifespan付きで最初から定義
@@ -50,7 +50,11 @@ app = FastAPI(lifespan=lifespan)
 templates = Jinja2Templates(directory="./app/templates")
 app.mount("/static", StaticFiles(directory="./app/static"), name="static")
 
+# 生成で使う、成長させるモデル
 model, tokenizer = loadModel()
+
+# 質問をさせて知識を集めるモデル
+Qmodel, Qtokenizer = loadModelForQuestion()
 
 # セッションごとのチャットログ
 session_logs = {}
@@ -76,7 +80,7 @@ def form_get(request: Request, session_id: str = None):
     session_logs.setdefault(session_id, [])
     session_first_request.setdefault(session_id, True)
 
-    question = generateQuestion(tokenizer, model)
+    question = generateQuestion(Qtokenizer, Qmodel)
 
     return templates.TemplateResponse("form.html", {
         "request": request,
@@ -106,7 +110,7 @@ def form_post(
     # 今回の質問を履歴に加える
     full_context = f"{history_text}Question: {question}\n"
 
-    response_text = generateResponse(tokenizer, model, full_context, answer)
+    response_text = generateResponse(Qtokenizer, Qmodel, full_context, answer)
 
     # 履歴に今回のやりとりを追加
     chat_log.append({
@@ -124,11 +128,10 @@ def form_post(
         "session_id": session_id,
     })
     
-    
 # -----普通のAIとして使う場所-----
 
 @app.get("/generate", response_class=HTMLResponse)
-def form_get(request: Request, session_id: str = None):
+def generate_get(request: Request, session_id: str = None):
     # セッションIDがURLパラメータにない場合は、新規生成してリダイレクト
     if not session_id:
         new_id = str(uuid.uuid4())
