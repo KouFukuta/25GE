@@ -14,6 +14,9 @@ from .chatLog import saveJSON
 from .fineTune import startFinetuning
 from .generate import generateAnswer
 
+
+# -----ファインチューニングのスケジューラー-----
+
 # スケジューラの初期化
 scheduler = BackgroundScheduler()
 scheduler.configure(timezone=timezone("Asia/Tokyo"))
@@ -45,6 +48,7 @@ async def lifespan(app: FastAPI):
     yield
     scheduler.shutdown()
 
+# -----fastAPIの設定-----
 
 app = FastAPI(lifespan=lifespan)
 templates = Jinja2Templates(directory="./app/templates")
@@ -52,7 +56,6 @@ app.mount("/static", StaticFiles(directory="./app/static"), name="static")
 
 # 生成で使う、成長させるモデル
 model, tokenizer = loadModel()
-
 # 質問をさせて知識を集めるモデル
 Qmodel, Qtokenizer = loadModelForQuestion()
 
@@ -67,6 +70,9 @@ def get_or_create_session_id(session_id):
 
 # 初回かどうかもセッションごとに管理
 session_first_request = {}
+
+
+# -----form.htmlで使うコード-----
 
 # GET: 質問を生成
 @app.get("/", response_class=HTMLResponse)
@@ -88,7 +94,6 @@ def form_get(request: Request, session_id: str = None):
         "chatLogs": session_logs[session_id],
         "session_id": session_id,  # テンプレートにも渡す
     })
-
 
 
 # POST: 回答を受け取って応答を生成
@@ -127,6 +132,30 @@ def form_post(
         "chatLogs": chat_log,
         "session_id": session_id,
     })
+    
+# 最初の質問の再生成 答えられない時など
+@app.post("/reGenerate", response_class=HTMLResponse)
+def reGenerateQuestion(request: Request, 
+                       session_id: str = Form(...)
+                    ):
+    # セッションIDがURLパラメータにない場合は、新規生成してリダイレクト
+    if not session_id:
+        new_id = str(uuid.uuid4())
+        return RedirectResponse(url=f"/?session_id={new_id}")
+    
+    # ログ管理
+    session_logs.setdefault(session_id, [])
+    session_first_request.setdefault(session_id, True)
+
+    question = generateQuestion(Qtokenizer, Qmodel)
+
+    return templates.TemplateResponse("form.html", {
+        "request": request,
+        "question": question,
+        "chatLogs": session_logs[session_id],
+        "session_id": session_id,  # テンプレートにも渡す
+    })
+    
     
 # -----普通のAIとして使う場所-----
 

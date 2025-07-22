@@ -4,25 +4,25 @@ from pathlib import Path
 
 def generateAnswer(tokenizer, model, query):
     
-    template = {
-        "w_input": (
-            "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
-            "### 指示:{instruction}\n"
-            "### 入力:\n{input}\n"
-            "### 応答:\n"
-        ),
-        "wo_input": (
-            "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
-            "### 指示:{instruction}\n"
-            "### 応答:\n"
-        )
-    }
+    # template = {
+    #     "w_input": (
+    #         "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
+    #         "### 指示:{instruction}\n"
+    #         "### 入力:\n{input}\n"
+    #         "### 応答:\n"
+    #     ),
+    #     "wo_input": (
+    #         "以下はタスクを記述した指示と入力です。入力はタスクで参照されている文章です。指示を適切に満たす応答を書きなさい。\n\n"
+    #         "### 指示:{instruction}\n"
+    #         "### 応答:\n"
+    #     )
+    # }
     
-    d = {}
-    d['instruction'] = query
-    d['output'] = ""
+    # d = {}
+    # d['instruction'] = query
+    # d['output'] = ""
     
-    ptext = template['wo_input'].format_map(d)
+    ptext = query
     
     inputs = tokenizer.encode_plus(
         ptext,

@@ -1,5 +1,5 @@
 # モデルのインプット
-from .config import TOKENIZER_PATH
+from .config import MODEL_PATH, TOKENIZER_PATH
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from pathlib import Path
@@ -8,7 +8,7 @@ import re
 
 def loadModelForQuestion():
     Qmodel = AutoModelForCausalLM.from_pretrained(
-        "./tunedModels/prototype_fukabori/checkpoint-150",
+        MODEL_PATH,
         local_files_only=True
     )
     Qtokenizer = AutoTokenizer.from_pretrained(

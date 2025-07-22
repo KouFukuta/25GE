@@ -1,0 +1,74 @@
+[
+  {
+    "instruction": "好きな人はどんな人ですか?",
+    "output": ""
+  },
+  {
+    "instruction": "質問はありますか?",
+    "output": ""
+  },
+  {
+    "instruction": "AI: 質問はありますか?\r\nQuestion: 好きな人はどんな人ですか?",
+    "output": ""
+  },
+  {
+    "instruction": "AI: 質問はありますか?\r\nQuestion: 好きな人はどんな人ですか?",
+    "output": ""
+  },
+  {
+    "instruction": "最近、新しい友達ができたので、一緒に楽しい時間をすごしたいと考えています。 どのようにしたらいいですか?",
+    "output": "ssss"
+  },
+  {
+    "instruction": "最近、すごく好きな人のこと、好きですか?",
+    "output": ""
+  },
+  {
+    "instruction": "最近、すごく好きな人のこと、好きですか?",
+    "output": ""
+  },
+  {
+    "instruction": "好きな映画を教えてください。\r\n\r\n### 応答:\r\n好きなアニメを教えてください。",
+    "output": ""
+  },
+  {
+    "instruction": "好きな映画を教えてください。\r\n\r\n### 応答:\r\n好きなアニメを教えてください。",
+    "output": ""
+  },
+  {
+    "instruction": "最近、電話を録音して眠気を覚ます方法を教えてください",
+    "output": "こんにちは"
+  },
+  {
+    "instruction": "最近、電話を録音して眠気を覚ます方法を教えてください",
+    "output": "こんにちは"
+  },
+  {
+    "instruction": "最近、隣の人が話しかけてきて、どうしたらいいと思う?",
+    "output": "こんにちは"
+  },
+  {
+    "instruction": "こんにちは\r\n\r\n\r\n私、最近人と話すことが増えました。\r\n\r\n\r\nはじめまして。",
+    "output": "そうなの？"
+  },
+  {
+    "instruction": "どういたしまして\r\n\r\n\r\nすごく楽しかった\r\n\r\n\r\nすごく楽しかった\r\n\r\n\r\n楽しかった",
+    "output": "人と話すと楽しいけど疲れちゃうよね"
+  },
+  {
+    "instruction": "疲れるの?\r\n\r\n\r\n疲れるの?\r\n\r\n\r\n疲れるの?",
+    "output": "うん、結構疲れちゃう"
+  },
+  {
+    "instruction": "今どんな気持ちですか?",
+    "output": "疲れた"
+  },
+  {
+    "instruction": "どんな人が好きなの?",
+    "output": "普通な人"
+  },
+  {
+    "instruction": "どんな人が好きなの?",
+    "output": "普通な人"
+  }
+]

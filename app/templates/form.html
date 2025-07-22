@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyndHound</title>
+  <title>MyndHound-覚えさせる-</title>
 
   <!-- fabicon -->
   <link rel="icon" type="image/svg+xml" sizes="any" href="/static/images/500icon.svg">
@@ -68,9 +68,27 @@
           <div class="form-container">
             <textarea id="messageInput" name="answer" placeholder="質問に答えてみよう！"
               class="dotgothic form-textarea">{{ answer or "" }}</textarea>
-            <p class="dotgothic warning">※個人情報などを含む内容は送信しないでください。AIが学習してしまい、全ユーザーに公開される恐れがあります。</p>
-            <button type="submit" class="form-submit"><img src="/static/images/submitbutton.svg" alt="submit"></button>
+
+            <div class="textarea-under">
+              <p class="dotgothic warning">※個人情報などを含む内容は送信しないでください。AIが学習してしまい、全ユーザーに公開される恐れがあります。</p>
+
+              <div class="button-container">
+                <!-- 送信ボタン -->
+                <button type="submit" class="form-submit form-button"><img src="/static/images/submitbutton.svg"
+                    alt="submit"></button>
+              </div>
+
+            </div>
+
           </div>
+
+        </form>
+
+        <!-- 質問再生成ボタン -->
+        <form id="reGenerate-form" action="/reGenerate" method="post">
+          <input type="hidden" name="session_id" value="{{ session_id }}">
+          <button type="submit" class="form-button reGenerate-position" formaction="/reGenerate"><img src="/static/images/reload_icon.svg"
+              alt="reload"></button>
         </form>
 
       </div>
@@ -146,28 +164,26 @@
       }
     });
 
-    // Enterで送信する
+    const form = document.getElementById("teachAI-form");
     const textarea = document.getElementById("messageInput");
 
-    textarea.addEventListener("keydown", function (e) {
-      // Shift+Enter なら改行
-      if (e.key === "Enter" && e.shiftKey) return;
-
-      // Enterのみ（送信処理）
-      if (e.key === "Enter") {
-        e.preventDefault(); // 改行キャンセル
-
-        // 空かどうかチェック（空白だけも除外）
-        const text = this.value.trim();
-        if (text === "") {
-          // 必要なら警告表示もできるよ
-          alert("テキストを入力してください！");
-          return;
-        }
-
-        this.form.submit();
+    // フォーム送信時の共通チェック（Enterでもボタンクリックでも対応）
+    form.addEventListener("submit", function (e) {
+      const text = textarea.value.trim();
+      if (text === "") {
+        alert("テキストを入力してください！");
+        e.preventDefault();  // 送信キャンセル
       }
     });
+
+    // Enterキー送信の処理（すでにあるやつにsubmit外してOK）
+    textarea.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();  // 改行キャンセル
+        form.requestSubmit(); // フォーム送信を明示的に呼ぶ
+      }
+    });
+
 
 
   </script>

@@ -205,7 +205,7 @@ body {
 
 .answer-section {
     width: 100%;
-    height: 145px;
+    height: 143px;
     border: 2px solid #7F7F7F;
 
     position: absolute;
@@ -226,22 +226,34 @@ body {
     resize: none;
 }
 
-.form-submit
+.textarea-under {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-button
 {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     width: 40px;
     height: 40px;
+}
+
+.reGenerate-position {
+    position: absolute;
+    bottom: -1px;
+    right: 40px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
 
 .warning {
     color: #808080;
     font-size: 12px;
-    
-    position: absolute;
-    bottom: 10px;
-    left: 2.5%;
+    margin-left: 10px;
 }
 
 /* ここまでフォーム */

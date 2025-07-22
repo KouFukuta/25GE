@@ -1,9 +1,19 @@
 from pathlib import Path
 import torch
 
-# モデル関連
-# MODEL_PATH = "rinna/japanese-gpt2-medium"
-MODEL_PATH = str(Path("./tunedModels/output/checkpoint-500/").resolve())
+#　元モデル
+# MODEL_PATH = str(Path("./tunedModels/output/checkpoint-500/").resolve())
+
+# 深掘りさせるモデル
+# MODEL_PATH = str(Path("./tunedModels/prototype_fukabori/checkpoint-150/").resolve())
+
+# 深掘りを対話形式で学習させたモデル
+# MODEL_PATH = str(Path("./tunedModels/prototype_fukaboriII/checkpoint-500/").resolve())
+
+# IとIIを統合したモデル
+MODEL_PATH = str(Path("./tunedModels/prototype_fukaboriIII/checkpoint-500/").resolve())
+
+
 TOKENIZER_PATH = "cyberagent/open-calm-small"
 TOKENIZER_USE_FAST = False
 TRUST_REMOTE_CODE = True
