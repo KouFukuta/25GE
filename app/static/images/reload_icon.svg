@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+<svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50">
+  <!-- Generator: Adobe Illustrator 29.6.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 9)  -->
   <defs>
     <style>
-      .cls-1 {
+      .st0 {
         fill: #fff;
       }
 
-      .cls-2 {
-        fill: #7f7f7f;
+      .st1 {
+        fill: #65735c;
       }
     </style>
   </defs>
-  <rect class="cls-2" width="50" height="50"/>
+  <rect class="st1" width="50" height="50"/>
   <g>
     <g>
-      <rect class="cls-1" x="28.9" y="11.9" width="5.61" height="1.87"/>
-      <rect class="cls-1" x="34.52" y="13.77" width="1.87" height="1.87"/>
-      <rect class="cls-1" x="19.23" y="10.03" width="9.36" height="1.87"/>
-      <rect class="cls-1" x="13.61" y="11.9" width="5.61" height="1.87"/>
-      <rect class="cls-1" x="32.64" y="19.39" width="9.36" height="1.87" transform="translate(57.64 -17) rotate(90)"/>
-      <rect class="cls-1" x="11.74" y="13.77" width="1.87" height="1.87"/>
-      <rect class="cls-1" x="32.64" y="19.39" width="1.87" height="1.87"/>
-      <rect class="cls-1" x="40.13" y="19.39" width="1.87" height="1.87"/>
-      <rect class="cls-1" x="34.52" y="21.26" width="1.87" height="1.87"/>
-      <rect class="cls-1" x="38.26" y="21.26" width="1.87" height="1.87"/>
+      <rect class="st0" x="28.9" y="11.9" width="5.6" height="1.9"/>
+      <rect class="st0" x="34.5" y="13.8" width="1.9" height="1.9"/>
+      <rect class="st0" x="19.2" y="10" width="9.4" height="1.9"/>
+      <rect class="st0" x="13.6" y="11.9" width="5.6" height="1.9"/>
+      <rect class="st0" x="36.4" y="15.6" width="1.9" height="9.4"/>
+      <rect class="st0" x="11.7" y="13.8" width="1.9" height="1.9"/>
+      <rect class="st0" x="32.6" y="19.4" width="1.9" height="1.9"/>
+      <rect class="st0" x="40.1" y="19.4" width="1.9" height="1.9"/>
+      <rect class="st0" x="34.5" y="21.3" width="1.9" height="1.9"/>
+      <rect class="st0" x="38.3" y="21.3" width="1.9" height="1.9"/>
     </g>
     <g>
-      <rect class="cls-1" x="15.48" y="36.23" width="5.61" height="1.87" transform="translate(36.58 74.33) rotate(180)"/>
-      <rect class="cls-1" x="13.61" y="34.36" width="1.87" height="1.87" transform="translate(29.1 70.58) rotate(180)"/>
-      <rect class="cls-1" x="21.42" y="38.1" width="9.36" height="1.87" transform="translate(52.19 78.07) rotate(180)"/>
-      <rect class="cls-1" x="30.77" y="36.23" width="5.61" height="1.87" transform="translate(67.16 74.33) rotate(180)"/>
-      <rect class="cls-1" x="8" y="28.74" width="9.36" height="1.87" transform="translate(-17 42.36) rotate(-90)"/>
-      <rect class="cls-1" x="36.39" y="34.36" width="1.87" height="1.87" transform="translate(74.65 70.58) rotate(180)"/>
-      <rect class="cls-1" x="15.48" y="28.74" width="1.87" height="1.87" transform="translate(32.84 59.36) rotate(180)"/>
-      <rect class="cls-1" x="8" y="28.74" width="1.87" height="1.87" transform="translate(17.87 59.36) rotate(180)"/>
-      <rect class="cls-1" x="13.61" y="26.87" width="1.87" height="1.87" transform="translate(29.1 55.61) rotate(180)"/>
-      <rect class="cls-1" x="9.87" y="26.87" width="1.87" height="1.87" transform="translate(21.61 55.61) rotate(180)"/>
+      <rect class="st0" x="15.5" y="36.2" width="5.6" height="1.9"/>
+      <rect class="st0" x="13.6" y="34.4" width="1.9" height="1.9"/>
+      <rect class="st0" x="21.4" y="38.1" width="9.4" height="1.9"/>
+      <rect class="st0" x="30.8" y="36.2" width="5.6" height="1.9"/>
+      <rect class="st0" x="11.7" y="25" width="1.9" height="9.4"/>
+      <rect class="st0" x="36.4" y="34.4" width="1.9" height="1.9"/>
+      <rect class="st0" x="15.5" y="28.7" width="1.9" height="1.9"/>
+      <rect class="st0" x="8" y="28.7" width="1.9" height="1.9"/>
+      <rect class="st0" x="13.6" y="26.9" width="1.9" height="1.9"/>
+      <rect class="st0" x="9.9" y="26.9" width="1.9" height="1.9"/>
     </g>
   </g>
 </svg>

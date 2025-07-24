@@ -19,7 +19,7 @@ def generateQuestion(tokenizer, model):
     }
 
     d = {}
-    d['instruction'] = "質問を作成してください。"
+    d['instruction'] = "質問を作成して"
     d['output'] = ""
 
     ptext = template['wo_input'].format_map(d)
@@ -53,7 +53,7 @@ def generateResponse(tokenizer, model, query, answer):
     # ユーザーに質問を投げる
     template = {
         "w_input": (
-            "以下はユーザーとの会話の続きです。共感をしながら内容を深堀りし、ユーザーと会話をしてください。\n\n"
+            "以下はユーザーとの会話です。内容を深堀りし、ユーザーに質問をしてください。\n\n"
             "{query}\n"
             
             "### 指示:\n{instruction}\n\n"
@@ -61,7 +61,7 @@ def generateResponse(tokenizer, model, query, answer):
             "### 応答:\n"
         ),
         "wo_input": (
-            "以下はユーザーとの会話の続きです。共感をしながら内容を深堀りし、ユーザーと会話をしてください。\n\n"
+            "以下はユーザーとの会話です。内容を深堀りし、ユーザーに質問をしてください。\n\n"
             "{query}\n"
             "### 指示:\n{instruction}\n\n"
             "### 応答:\n"
