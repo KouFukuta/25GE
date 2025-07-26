@@ -218,9 +218,9 @@ body {
 }
 
 .question-container {
-    width: 95%;
+    width: 85%;
     font-size: 21px;
-    margin: 0 auto;
+    margin-left: 2.5%;
 }
 
 .answer-section {
@@ -260,8 +260,13 @@ body {
 
 .reGenerate-position {
     position: absolute;
-    bottom: -1px;
-    right: 40px;
+    top: 0;
+    right: 0px;
+}
+
+.reGenerate-button {
+    width: 85px;
+    height: 85px;
 }
 
 .button-container {

@@ -85,14 +85,15 @@
 
         </form>
 
-        <!-- 質問再生成ボタン -->
-        <form id="reGenerate-form" action="/reGenerate" method="post">
-          <input type="hidden" name="session_id" value="{{ session_id }}">
-          <button type="submit" class="form-button reGenerate-position" formaction="/reGenerate"><img src="/static/images/reload_icon.SVG"
-              alt="reload"></button>
-        </form>
 
       </div>
+
+      <!-- 質問再生成ボタン -->
+      <form id="reGenerate-form" action="/reGenerate" method="post">
+        <input type="hidden" name="session_id" value="{{ session_id }}">
+        <button type="submit" class="reGenerate-button reGenerate-position" formaction="/reGenerate"><img
+            src="/static/images/reload_icon.SVG" alt="reload"></button>
+      </form>
 
     </div>
 
