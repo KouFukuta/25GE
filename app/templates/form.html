@@ -100,6 +100,71 @@
   </div>
 
   <script>
+    // ページ読み込み時にスクロールを一番下にする
+    document.addEventListener("DOMContentLoaded", () => {
+      const chatContainer = document.getElementById("chat-log");
+      if (chatContainer) {
+        // スクロールを一番下にする
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+    });
+
+    function typeWriterEffect(el, text, delay = 30) {
+      el.textContent = "";
+      let i = 0;
+
+      const interval = setInterval(() => {
+        el.textContent += text[i];
+        i++;
+        if (i >= text.length) {
+          clearInterval(interval);
+          stopTalking();
+        }
+      }, delay);
+    }
+
+    // キャラクター待機モーション、尻尾振り
+    const imagePaths = [
+      "/static/images/IMG_1317.png",
+      "/static/images/IMG_1326.PNG",
+    ];
+
+    let currentIndex = 0;
+    const imageElement = document.getElementById("aiCharacter");
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % imagePaths.length;
+      imageElement.src = imagePaths[currentIndex];
+    }, 1000); // 1000ミリ秒 = 1秒
+
+    // キャラクターのアニメーション
+    // 話す時
+    function startTalking() {
+      const char = document.getElementById("aiCharacter");
+      if (char) char.classList.add("talking");
+    }
+
+    function stopTalking() {
+      const char = document.getElementById("aiCharacter");
+      if (char) char.classList.remove("talking");
+    }
+
+    // ページ読み込み時に最後のレスポンスをタイプライター効果で表示
+    document.addEventListener("DOMContentLoaded", () => {
+      const responses = document.querySelectorAll(".typewriter");
+      if (responses.length > 0) {
+        const last = responses[responses.length - 1];
+        const text = last.dataset.text;
+        startTalking();
+        typeWriterEffect(last, text);
+      }
+      // スクロールを一番下にする
+      const chatContainer = document.getElementById("chat-log");
+      if (chatContainer) {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+    });
+
     const form = document.getElementById("teachAI-form");
     const textarea = document.getElementById("messageInput");
     const submitBtn = form.querySelector(".form-submit");
