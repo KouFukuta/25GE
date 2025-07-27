@@ -67,7 +67,7 @@
 
             <div class="textarea-under">
               <p class="dotgothic warning">一日経つと昨日教えたことを学習します。毎日見にきてみてください！</p>
-              <button type="submit" class="form-button"><img src="/static/images/submitbutton.svg"
+              <button type="submit" class="form-button form-submit" disabled><img src="/static/images/submitbutton.svg"
                   alt="submit"></button>
             </div>
 
@@ -85,95 +85,41 @@
   </div>
 
   <script>
-
-    // ページ読み込み時にスクロールを一番下にする
-    document.addEventListener("DOMContentLoaded", () => {
-      const chatContainer = document.getElementById("chat-log");
-      if (chatContainer) {
-        // スクロールを一番下にする
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-      }
-    });
-
-    function typeWriterEffect(el, text, delay = 30) {
-      el.textContent = "";
-      let i = 0;
-
-      const interval = setInterval(() => {
-        el.textContent += text[i];
-        i++;
-        if (i >= text.length) {
-          clearInterval(interval);
-          stopTalking();
-        }
-      }, delay);
-    }
-
-    // キャラクター待機モーション、尻尾振り
-    const imagePaths = [
-      "/static/images/IMG_1317.PNG",
-      "/static/images/IMG_1326.png",
-    ];
-
-    let currentIndex = 0;
-    const imageElement = document.getElementById("aiCharacter");
-
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % imagePaths.length;
-      imageElement.src = imagePaths[currentIndex];
-    }, 1000); // 1000ミリ秒 = 1秒
-
-    // キャラクターのアニメーション
-    // 話す時
-    function startTalking() {
-      const char = document.getElementById("aiCharacter");
-      if (char) char.classList.add("talking");
-    }
-
-    function stopTalking() {
-      const char = document.getElementById("aiCharacter");
-      if (char) char.classList.remove("talking");
-    }
-
-    // ページ読み込み時に最後のレスポンスをタイプライター効果で表示
-    document.addEventListener("DOMContentLoaded", () => {
-      const responses = document.querySelectorAll(".typewriter");
-      if (responses.length > 0) {
-        const last = responses[responses.length - 1];
-        const text = last.dataset.text;
-        startTalking();
-        typeWriterEffect(last, text);
-      }
-      // スクロールを一番下にする
-      const chatContainer = document.getElementById("chat-log");
-      if (chatContainer) {
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-      }
-    });
-
-    // Enterで送信する
+    const form = document.getElementById("teachAI-form");
     const textarea = document.getElementById("messageInput");
+    const submitBtn = form.querySelector(".form-submit");
 
-    textarea.addEventListener("keydown", function (e) {
-      // Shift+Enter なら改行
-      if (e.key === "Enter" && e.shiftKey) return;
+    // 入力が空なら送信ボタンを無効化
+    function toggleSubmitButton() {
+      const text = textarea.value.trim();
+      submitBtn.disabled = text === "";
+    }
 
-      // Enterのみ（送信処理）
-      if (e.key === "Enter") {
-        e.preventDefault(); // 改行キャンセル
+    // 入力中のイベントでボタン状態を切り替え
+    textarea.addEventListener("input", toggleSubmitButton);
 
-        // 空かどうかチェック（空白だけも除外）
-        const text = this.value.trim();
-        if (text === "") {
-          // 必要なら警告表示もできるよ
-          alert("テキストを入力してください！");
-          return;
-        }
-
-        this.form.submit();
+    // フォーム送信時チェック（空ならキャンセル）
+    form.addEventListener("submit", function (e) {
+      const text = textarea.value.trim();
+      if (text === "") {
+        e.preventDefault(); // 送信キャンセル
+        submitBtn.disabled = true;
       }
     });
 
+    // Enterで送信（Shift+Enterは改行）
+    textarea.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault(); // 改行キャンセル
+        const text = textarea.value.trim();
+        if (text !== "") {
+          form.requestSubmit();
+        }
+      }
+    });
+
+    // 初期状態でチェックしておく
+    document.addEventListener("DOMContentLoaded", toggleSubmitButton);
 
   </script>
 

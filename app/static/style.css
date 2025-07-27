@@ -258,6 +258,13 @@ body {
     height: 40px;
 }
 
+.form-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+
 .reGenerate-position {
     position: absolute;
     top: 0;
