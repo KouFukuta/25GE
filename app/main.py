@@ -37,6 +37,7 @@ def update_model_tokenizer(new_model, new_tokenizer):
     model = new_model
     tokenizer = new_tokenizer
 
+# ここでファインチューニングの時間設定
 scheduler.add_job(scheduled_finetune_job, 'cron', hour=0, minute=0)
 
 
@@ -116,6 +117,15 @@ def form_post(
     full_context = f"{history_text}Question: {question}\n"
 
     response_text = generateResponse(Qtokenizer, Qmodel, full_context, answer)
+    
+    if not chat_log:
+        # 最初の質問と人間の回答
+        saveJSON(question, answer)
+    else:
+        # 前回の人間の回答に対するAIの質問
+        prev = chat_log[-1]
+        saveJSON(prev["answer"], question)  # instruction: 人間の答え, output: 今回のAI質問
+        saveJSON(question, answer)          # instruction: AI質問, output: 人間の答え
 
     # 履歴に今回のやりとりを追加
     chat_log.append({
@@ -123,8 +133,6 @@ def form_post(
         "answer": answer,
         "response": response_text,
     })
-
-    saveJSON(question, answer)
 
     return templates.TemplateResponse("form.html", {
         "request": request,
@@ -155,6 +163,7 @@ def reGenerateQuestion(request: Request,
         "chatLogs": session_logs[session_id],
         "session_id": session_id,  # テンプレートにも渡す
     })
+    
     
     
 # -----普通のAIとして使う場所-----
