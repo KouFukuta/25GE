@@ -75,7 +75,15 @@ body {
 .now-page {
     border-bottom: #65735C 2px solid;
     display: block;
-    color: #808080;
+    color: #65735C;
+}
+
+.other-page {
+    color: #a6a5a5;
+}
+
+.other-page:hover {
+    color: #65735C;
 }
 
 .logo {
