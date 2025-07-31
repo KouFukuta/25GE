@@ -7,58 +7,64 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 from pytz import timezone
 from contextlib import asynccontextmanager
+import threading
 
+import app.state as state
 from .modelLoader import loadModel, loadModelForQuestion
 from .dialogue import generateQuestion, generateResponse
 from .chatLog import saveJSON
 from .fineTune import startFinetuning
 from .generate import generateAnswer
+from .fineTune_5datasets import modelUpdate
+
+# # -----ファインチューニングのスケジューラー-----
+
+# # スケジューラの初期化
+# scheduler = BackgroundScheduler()
+# scheduler.configure(timezone=timezone("Asia/Tokyo"))
+
+# # ファインチューニングを毎日0時に実行
+# def scheduled_finetune_job():
+#     print("starting scheduled fine-tuning job...")
+#     save_path = startFinetuning()
+#     print(f"saved model: {save_path}")
+
+#     new_model, new_tokenizer = loadModel()
+#     update_model_tokenizer(new_model, new_tokenizer)
+
+#     print("updated model and tokenizer！")
+
+# def update_model_tokenizer(new_model, new_tokenizer):
+#     global model, tokenizer
+#     model = new_model
+#     tokenizer = new_tokenizer
+
+# # ここでファインチューニングの時間設定
+# scheduler.add_job(scheduled_finetune_job, 'cron', hour=0, minute=0)
 
 
-# -----ファインチューニングのスケジューラー-----
-
-# スケジューラの初期化
-scheduler = BackgroundScheduler()
-scheduler.configure(timezone=timezone("Asia/Tokyo"))
-
-# ファインチューニングを毎日0時に実行
-def scheduled_finetune_job():
-    print("starting scheduled fine-tuning job...")
-    save_path = startFinetuning()
-    print(f"saved model: {save_path}")
-
-    new_model, new_tokenizer = loadModel()
-    update_model_tokenizer(new_model, new_tokenizer)
-
-    print("updated model and tokenizer！")
-
-def update_model_tokenizer(new_model, new_tokenizer):
-    global model, tokenizer
-    model = new_model
-    tokenizer = new_tokenizer
-
-# ここでファインチューニングの時間設定
-scheduler.add_job(scheduled_finetune_job, 'cron', hour=0, minute=0)
-
-
-# FastAPIを lifespan付きで最初から定義
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    print("0:00 Starting scheduled job for fine-tuning...")
-    scheduler.start()
-    yield
-    scheduler.shutdown()
+# # FastAPIを lifespan付きで最初から定義
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     print("0:00 Starting scheduled job for fine-tuning...")
+#     scheduler.start()
+#     yield
+#     scheduler.shutdown()
 
 # -----fastAPIの設定-----
 
-app = FastAPI(lifespan=lifespan)
+# app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 templates = Jinja2Templates(directory="./app/templates")
 app.mount("/static", StaticFiles(directory="./app/static"), name="static")
 
 # 生成で使う、成長させるモデル
-model, tokenizer = loadModel()
+state.model, state.tokenizer = loadModel()
 # 質問をさせて知識を集めるモデル
 Qmodel, Qtokenizer = loadModelForQuestion()
+
+# ファインチューニングを前に行った件数
+last_finetune_count = 0
 
 # セッションごとのチャットログ
 session_logs = {}
@@ -105,6 +111,8 @@ def form_post(
     question: str = Form(...),
     session_id: str = Form(...),  # URLじゃなくフォームのhiddenから
 ):
+    global last_finetune_count
+    
     chat_log = session_logs.setdefault(session_id, [])
     recent_logs = chat_log[-5:]
     history_text = ""
@@ -120,12 +128,18 @@ def form_post(
     
     if not chat_log:
         # 最初の質問と人間の回答
-        saveJSON(question, answer)
+        chatLog_len = saveJSON(question, answer)
     else:
         # 前回の人間の回答に対するAIの質問
         prev = chat_log[-1]
-        saveJSON(prev["answer"], question)  # instruction: 人間の答え, output: 今回のAI質問
-        saveJSON(question, answer)          # instruction: AI質問, output: 人間の答え
+        chatLog_len = saveJSON(prev["answer"], question)  # instruction: 人間の答え, output: 今回のAI質問
+        chatLog_len = saveJSON(question, answer)    
+        # instruction: AI質問, output: 人間の答え
+        
+    # ファインチューニングのトリガー
+    if chatLog_len - last_finetune_count >= 10:
+        threading.Thread(target=modelUpdate, args=(chatLog_len,)).start()
+        last_finetune_count = chatLog_len  # 実行後に更新
 
     # 履歴に今回のやりとりを追加
     chat_log.append({
@@ -199,7 +213,7 @@ def generate_post(
         history_text += f"Question: {log['question']}\n"
         history_text += f"User: {log['answer']}\n"
 
-    response_text = generateAnswer(tokenizer, model, question)
+    response_text = generateAnswer(state.tokenizer, state.model, question)
 
     # 履歴に今回のやりとりを追加
     Gen_chat_log.append({
