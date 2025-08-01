@@ -8,6 +8,7 @@ from datetime import datetime
 from pytz import timezone
 from contextlib import asynccontextmanager
 import threading
+import serial
 
 import app.state as state
 from .modelLoader import loadModel, loadModelForQuestion
@@ -16,6 +17,7 @@ from .chatLog import saveJSON
 from .fineTune import startFinetuning
 from .generate import generateAnswer
 from .fineTune_5datasets import modelUpdate
+from .setUSB import findNuigurumi
 
 # # -----ファインチューニングのスケジューラー-----
 
@@ -78,6 +80,18 @@ def get_or_create_session_id(session_id):
 # 初回かどうかもセッションごとに管理
 session_first_request = {}
 
+# シリアル通信の設定
+state.ser = findNuigurumi()
+
+if state.ser:
+    try:
+        state.ser.write(b"connected\n")
+    except Exception as e:
+        print(f"⚠️ シリアル送信エラー: {e}")
+else:
+    print("ぬいぐるみ無しでも動作続行します〜")
+
+
 
 # -----form.htmlで使うコード-----
 
@@ -113,6 +127,8 @@ def form_post(
 ):
     global last_finetune_count
     
+    state.ser.write(b'response\n')
+    
     chat_log = session_logs.setdefault(session_id, [])
     recent_logs = chat_log[-5:]
     history_text = ""
@@ -138,6 +154,7 @@ def form_post(
         
     # ファインチューニングのトリガー
     if chatLog_len - last_finetune_count >= 10:
+        state.ser.write(b"Tuning\n")
         threading.Thread(target=modelUpdate, args=(chatLog_len,)).start()
         last_finetune_count = chatLog_len  # 実行後に更新
 
@@ -147,6 +164,8 @@ def form_post(
         "answer": answer,
         "response": response_text,
     })
+    
+    state.ser.write(b'finishResponse\n')
 
     return templates.TemplateResponse("form.html", {
         "request": request,

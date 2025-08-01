@@ -1,0 +1,186 @@
+[
+  {
+    "instruction": "Question: Question: Question: Question\r\nQuestion: Question",
+    "output": "aa"
+  },
+  {
+    "instruction": "どうやったら、どんな質問をくれるの?\r\n\r\n\r\n質問は、なるべく自分の声で考えてみる",
+    "output": "a"
+  },
+  {
+    "instruction": "a",
+    "output": "今、どんな気持ち?\r\n\r\n\r\n 辛いときは、どんな気持ちでいるの?"
+  },
+  {
+    "instruction": "今、どんな気持ち?\r\n\r\n\r\n 辛いときは、どんな気持ちでいるの?",
+    "output": "aa"
+  },
+  {
+    "instruction": "どうやったら、どんな気持ちになるの?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "どうやったら、どんな気持ちになるの?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "どうやったら、気持ちに変化が表れる?"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな気持ちになるの?\r\n\r\n\r\n「どうやったら気持ちに変化が表れる?」"
+  },
+  {
+    "instruction": "どんな気持ちになるの?\r\n\r\n\r\n「どうやったら気持ちに変化が表れる?」",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どうやったら気持ちに変化が表れる?"
+  },
+  {
+    "instruction": "どうやったら気持ちに変化が表れる?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "どうやったら、気持ちに変化が表れる?\r\n\r\nQuestion: どうやったら、気持ちに変化が表れる?"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?\r\n\r\nQuestion: どうやったら、気持ちに変化が表れる?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どうやったら、気持ちに変化が表れる?"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "どんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どうやったら、気持ちに変化が表れる?"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?",
+    "output": "a"
+  },
+  {
+    "instruction": "a",
+    "output": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どうやったら、気持ちに変化が表れる?"
+  },
+  {
+    "instruction": "どうやったら、気持ちに変化が表れる?",
+    "output": "aaaaaa"
+  },
+  {
+    "instruction": "aaaaaa",
+    "output": "AIに何か質問は?"
+  },
+  {
+    "instruction": "AIに何か質問は?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "AIに何か質問は?\r\nQuestion: どんな気持ちになるの?"
+  },
+  {
+    "instruction": "AIに何か質問は?\r\nQuestion: どんな気持ちになるの?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "AIに何か質問は?"
+  },
+  {
+    "instruction": "AIに何か質問は?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "AIに何か質問は?"
+  },
+  {
+    "instruction": "AIに何か質問は?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "AIに何か質問は?"
+  },
+  {
+    "instruction": "AIに何か質問は?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "AIはどのように、相手に対して質問をしたの?"
+  },
+  {
+    "instruction": "AIはどのように、相手に対して質問をしたの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion"
+  },
+  {
+    "instruction": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion",
+    "output": "aaaaaaa"
+  },
+  {
+    "instruction": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuest",
+    "output": "aaaaaa"
+  },
+  {
+    "instruction": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "AIは何か質問をくれる?\r\nQuestion: AIに何か質問は?"
+  },
+  {
+    "instruction": "AIは何か質問をくれる?\r\nQuestion: AIに何か質問は?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "AIに何か質問は?"
+  },
+  {
+    "instruction": "AIに何か質問は?",
+    "output": "aaaa"
+  }
+]

@@ -9,6 +9,7 @@ import os
 from datetime import datetime, timedelta
 from pathlib import Path
 import re
+import serial
 
 import app.state as state
 from .config import TOKENIZER_PATH
@@ -32,6 +33,7 @@ def modelUpdate(chatLog_len):
     state.tokenizer = tokenizer
     
     print(f"対話モデルを更新しました: {model_path}")
+    state.ser.write(b"TuningEnd\n")
     
 
 def FiveFinetuning(startIndex, endIndex):
