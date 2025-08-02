@@ -1,186 +1,286 @@
 [
   {
-    "instruction": "Question: Question: Question: Question\r\nQuestion: Question",
-    "output": "aa"
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "っっh"
   },
   {
-    "instruction": "どうやったら、どんな質問をくれるの?\r\n\r\n\r\n質問は、なるべく自分の声で考えてみる",
-    "output": "a"
+    "instruction": "っっh",
+    "output": "Question: どんな質問を書いておけばいい?"
   },
   {
-    "instruction": "a",
-    "output": "今、どんな気持ち?\r\n\r\n\r\n 辛いときは、どんな気持ちでいるの?"
+    "instruction": "Question: どんな質問を書いておけばいい?",
+    "output": "っh"
   },
   {
-    "instruction": "今、どんな気持ち?\r\n\r\n\r\n 辛いときは、どんな気持ちでいるの?",
-    "output": "aa"
+    "instruction": "っh",
+    "output": "どんな質問でHow do you like?"
   },
   {
-    "instruction": "どうやったら、どんな気持ちになるの?",
-    "output": "aaaa"
+    "instruction": "どんな質問でHow do you like?",
+    "output": "っh"
   },
   {
-    "instruction": "どうやったら、どんな気持ちになるの?",
-    "output": "aa"
+    "instruction": "っh",
+    "output": "質問は、どんな言葉を使って、どんなことを感じた?"
   },
   {
-    "instruction": "aa",
-    "output": "どうやったら、気持ちに変化が表れる?"
+    "instruction": "質問は、どんな言葉を使って、どんなことを感じた?",
+    "output": "h"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?",
-    "output": "aaaa"
+    "instruction": "h",
+    "output": "どんな質問が頭に浮かんだ?"
   },
   {
-    "instruction": "aaaa",
-    "output": "どんな気持ちになるの?\r\n\r\n\r\n「どうやったら気持ちに変化が表れる?」"
+    "instruction": "どんな質問が頭に浮かんだ?",
+    "output": "あ"
   },
   {
-    "instruction": "どんな気持ちになるの?\r\n\r\n\r\n「どうやったら気持ちに変化が表れる?」",
-    "output": "aaa"
+    "instruction": "あ",
+    "output": "どんな質問で、どんなことを考えた?"
   },
   {
-    "instruction": "aaa",
-    "output": "どうやったら気持ちに変化が表れる?"
+    "instruction": "どんな質問で、どんなことを考えた?",
+    "output": "あ"
   },
   {
-    "instruction": "どうやったら気持ちに変化が表れる?",
-    "output": "aaaa"
+    "instruction": "あ",
+    "output": "AIに質問をしてみて、どんなところが良かった?\r\nQuestion: どんな質問をして、どんなことを考えた?\r\nUser: っh\r\nAI"
   },
   {
-    "instruction": "aaaa",
-    "output": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間"
+    "instruction": "AIに質問をしてみて、どんなところが良かった?\r\nQuestion: どんな質問をして、どんなことを考えた?\r\nUser: っh\r\nAI",
+    "output": "g"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間",
-    "output": "aa"
+    "instruction": "g",
+    "output": "AIの質問にどう答えた?"
   },
   {
-    "instruction": "aa",
-    "output": "どうやったら、気持ちに変化が表れる?\r\n\r\nQuestion: どうやったら、気持ちに変化が表れる?"
+    "instruction": "AIの質問にどう答えた?",
+    "output": "h"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?\r\n\r\nQuestion: どうやったら、気持ちに変化が表れる?",
-    "output": "aaaa"
+    "instruction": "h",
+    "output": "AIの質問にどう答えた?\r\n\r\n\r\nAIの質問にどう答えた?"
   },
   {
-    "instruction": "aaaa",
-    "output": "どうやったら、気持ちに変化が表れる?"
+    "instruction": "AIの質問にどう答えた?\r\n\r\n\r\nAIの質問にどう答えた?",
+    "output": "っh"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?",
-    "output": "aa"
+    "instruction": "っh",
+    "output": "AIは、どのような言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aa",
-    "output": "どんな気持ちになるの?"
+    "instruction": "AIは、どのような言葉を使って、どんなことを考えた?",
+    "output": "っj"
   },
   {
-    "instruction": "どんな気持ちになるの?",
-    "output": "aaa"
+    "instruction": "っj",
+    "output": "AIに質問をしてみて、どんなところが良かった?\r\nUser: \r\n# 応答:"
   },
   {
-    "instruction": "aaa",
-    "output": "どうやったら、気持ちに変化が表れる?"
+    "instruction": "AIに質問をしてみて、どんなところが良かった?\r\nUser: \r\n# 応答:",
+    "output": "h"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?",
-    "output": "a"
+    "instruction": "h",
+    "output": "AIに質問をしてみて、どんなところが良かった?"
   },
   {
-    "instruction": "a",
-    "output": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間"
+    "instruction": "AIに質問をしてみて、どんなところが良かった?",
+    "output": "っb"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?\r\n\r\n\r\nAIが意識的に考え出す瞬間",
-    "output": "aaaa"
+    "instruction": "っb",
+    "output": "AIの質問をしてみて、どんなところが良かった?\r\n\r\n\r\nAIの質問をしてみて、どんなところが良かった?"
   },
   {
-    "instruction": "aaaa",
-    "output": "どうやったら、気持ちに変化が表れる?"
+    "instruction": "AIの質問をしてみて、どんなところが良かった?\r\n\r\n\r\nAIの質問をしてみて、どんなところが良かった?",
+    "output": "っk"
   },
   {
-    "instruction": "どうやったら、気持ちに変化が表れる?",
-    "output": "aaaaaa"
+    "instruction": "っk",
+    "output": "AIは、どのような言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAI: AIに質問をしてみて、どんなところが良かった"
   },
   {
-    "instruction": "aaaaaa",
-    "output": "AIに何か質問は?"
+    "instruction": "AIは、どのような言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAI: AIに質問をしてみて、どんなところが良かった",
+    "output": "jっっh"
   },
   {
-    "instruction": "AIに何か質問は?",
-    "output": "aaaa"
+    "instruction": "jっっh",
+    "output": "AIに質問をしてみて、どんなところが良かった?"
   },
   {
-    "instruction": "aaaa",
-    "output": "AIに何か質問は?\r\nQuestion: どんな気持ちになるの?"
+    "instruction": "AIに質問をしてみて、どんなところが良かった?",
+    "output": "っj"
   },
   {
-    "instruction": "AIに何か質問は?\r\nQuestion: どんな気持ちになるの?",
-    "output": "aaaa"
+    "instruction": "っj",
+    "output": "AIは、どのような言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aaaa",
-    "output": "AIに何か質問は?"
+    "instruction": "AIは、どのような言葉を使って、どんなことを考えた?",
+    "output": "っj"
   },
   {
-    "instruction": "AIに何か質問は?",
-    "output": "aaa"
+    "instruction": "っj",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aaa",
-    "output": "AIに何か質問は?"
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "っj"
   },
   {
-    "instruction": "AIに何か質問は?",
-    "output": "aa"
+    "instruction": "っj",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAIは、どんな言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aa",
-    "output": "AIに何か質問は?"
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "j"
   },
   {
-    "instruction": "AIに何か質問は?",
-    "output": "aa"
+    "instruction": "j",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAIは、どんな言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aa",
-    "output": "AIはどのように、相手に対して質問をしたの?"
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "j"
   },
   {
-    "instruction": "AIはどのように、相手に対して質問をしたの?",
-    "output": "aaa"
+    "instruction": "j",
+    "output": "AIがどんな言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aaa",
-    "output": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion"
+    "instruction": "AIがどんな言葉を使って、どんなことを考えた?",
+    "output": "っj"
   },
   {
-    "instruction": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion",
-    "output": "aaaaaaa"
+    "instruction": "っj",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuest",
-    "output": "aaaaaa"
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "おおお"
   },
   {
-    "instruction": "AIに何か質問は?\r\nQuestion: AIに何か質問は?\r\nQuestion: AIに何か質問は?",
-    "output": "aaa"
+    "instruction": "おおお",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
   },
   {
-    "instruction": "aaa",
-    "output": "AIは何か質問をくれる?\r\nQuestion: AIに何か質問は?"
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "hyっっっh"
   },
   {
-    "instruction": "AIは何か質問をくれる?\r\nQuestion: AIに何か質問は?",
-    "output": "aaa"
+    "instruction": "hyっっっh",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nUser:"
   },
   {
-    "instruction": "aaa",
-    "output": "AIに何か質問は?"
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nUser:",
+    "output": "っじゅっっj"
   },
   {
-    "instruction": "AIに何か質問は?",
-    "output": "aaaa"
+    "instruction": "っじゅっっj",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: \r\n# 応答:\r\nAIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "うhyっっっg"
+  },
+  {
+    "instruction": "うhyっっっg",
+    "output": "AIがどんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIがどんな言葉を使って、どんなことを考えた?",
+    "output": "うんこ"
+  },
+  {
+    "instruction": "うんこ",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "うんち"
+  },
+  {
+    "instruction": "うんち",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "っっh"
+  },
+  {
+    "instruction": "っっh",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: うん"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: うん",
+    "output": "っk"
+  },
+  {
+    "instruction": "っk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: うん"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nUser: うん",
+    "output": "っっk"
+  },
+  {
+    "instruction": "っっk",
+    "output": "AIがどんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIがどんな言葉を使って、どんなことを考えた?",
+    "output": "っっっk"
+  },
+  {
+    "instruction": "っっっk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "っっk"
+  },
+  {
+    "instruction": "っっk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "っk"
+  },
+  {
+    "instruction": "っk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion:"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion:",
+    "output": "っっっk"
+  },
+  {
+    "instruction": "っっっk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "っっっっっっっk"
+  },
+  {
+    "instruction": "っっっっっっっk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?",
+    "output": "っっk"
+  },
+  {
+    "instruction": "っっk",
+    "output": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion:"
+  },
+  {
+    "instruction": "AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion: AIは、どんな言葉を使って、どんなことを考えた?\r\nQuestion:",
+    "output": "っっっっっっっこ"
   }
 ]

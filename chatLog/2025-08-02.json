@@ -1,0 +1,26 @@
+[
+  {
+    "instruction": "どんなときにどんなことをしてリラックスするの?",
+    "output": "aaaaa"
+  },
+  {
+    "instruction": "どんな質問を作ってどんなことを伝えたいの?",
+    "output": "a"
+  },
+  {
+    "instruction": "どんな質問を作ってどんなことを伝えたいの?",
+    "output": "a"
+  },
+  {
+    "instruction": "どんな時に心が落ち着くの?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "どんな風に回答していますか?\r\n\r\n###",
+    "output": "こんにちは"
+  },
+  {
+    "instruction": "どんな風に文章を書けばいいと思う?",
+    "output": "ああああ"
+  }
+]

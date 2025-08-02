@@ -53,6 +53,7 @@ from .setUSB import findNuigurumi
 #     yield
 #     scheduler.shutdown()
 
+
 # -----fastAPIの設定-----
 
 # app = FastAPI(lifespan=lifespan)
@@ -127,7 +128,12 @@ def form_post(
 ):
     global last_finetune_count
     
-    state.ser.write(b'response\n')
+    
+    if state.ser:
+        try:
+            state.ser.write(b'response\n')
+        except Exception as e:
+            print(f"⚠️ シリアル送信エラー: {e}")
     
     chat_log = session_logs.setdefault(session_id, [])
     recent_logs = chat_log[-5:]
@@ -165,7 +171,11 @@ def form_post(
         "response": response_text,
     })
     
-    state.ser.write(b'finishResponse\n')
+    if state.ser:
+        try:
+            state.ser.write(b"finishResponse\n")
+        except Exception as e:
+            print(f"⚠️ シリアル送信エラー: {e}")
 
     return templates.TemplateResponse("form.html", {
         "request": request,
