@@ -1,0 +1,398 @@
+[
+  {
+    "instruction": "どんなときにどんなことをして気持ちを楽に感じる?",
+    "output": "a"
+  },
+  {
+    "instruction": "a",
+    "output": "どんな時にどんなことをして気持ちを楽に感じる?\r\n\r\n\r\nどんな時にどんなことをして気持ちを楽に感じる?"
+  },
+  {
+    "instruction": "どんな時にどんなことをして気持ちを楽に感じる?\r\n\r\n\r\nどんな時にどんなことをして気持ちを楽に感じる?",
+    "output": "aaaaa"
+  },
+  {
+    "instruction": "aaaaa",
+    "output": "どんな時にどんなことをして気持ちを楽に感じる?\r\n\r\n\r\nどんな時にどんなことをして気持ちを楽に感じる?"
+  },
+  {
+    "instruction": "どんな時にどんなことをして気持ちを楽に感じる?\r\n\r\n\r\nどんな時にどんなことをして気持ちを楽に感じる?",
+    "output": "aaaaa"
+  },
+  {
+    "instruction": "aaaaa",
+    "output": "どんな時にどんなことをして気持ちを楽に感じる?\r\n\r\n\r\nどんな時にどんなことをして気持ちを楽に感じる?"
+  },
+  {
+    "instruction": "どんな時にどんなことをして気持ちを楽に感じる?\r\n\r\n\r\nどんな時にどんなことをして気持ちを楽に感じる?",
+    "output": "aaaaa"
+  },
+  {
+    "instruction": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?"
+  },
+  {
+    "instruction": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?"
+  },
+  {
+    "instruction": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?"
+  },
+  {
+    "instruction": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?"
+  },
+  {
+    "instruction": "あなたにとってどんなことを思い出すとき、どんな気持ちになった?",
+    "output": "aa"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "どんなタスクなら気分転換になるの?",
+    "output": "あああ"
+  },
+  {
+    "instruction": "あああ",
+    "output": "どんなタスクなら気分転換になるの?"
+  },
+  {
+    "instruction": "どんなタスクなら気分転換になるの?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "どんな質問をあなたは作ってるの?",
+    "output": "ああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "ああああ",
+    "output": "今日のタスクはどのような感じだった?"
+  },
+  {
+    "instruction": "今日のタスクはどのような感じだった?",
+    "output": "ああああ"
+  },
+  {
+    "instruction": "どんな質問を投稿したらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を投稿したらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を投稿したらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を投稿したらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を投稿したらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "どんな質問を考えてみた?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな質問を考えてみた?"
+  },
+  {
+    "instruction": "どんな質問を考えてみた?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな質問を考えてみた?"
+  },
+  {
+    "instruction": "どんな質問を考えてみた?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "どんな風に書くと喜びますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな風に書くと喜びますか?"
+  },
+  {
+    "instruction": "どんな風に書くと喜びますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな風に書くと喜びますか?"
+  },
+  {
+    "instruction": "どんな風に書くと喜びますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな風に書くと喜びますか?"
+  },
+  {
+    "instruction": "どんな風に書くと喜びますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな風に書くと喜びますか?"
+  },
+  {
+    "instruction": "どんな風に書くと喜びますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "aaaa",
+    "output": "どんな風に書くと喜びますか?"
+  },
+  {
+    "instruction": "どんな風に書くと喜びますか?",
+    "output": "aaaa"
+  },
+  {
+    "instruction": "ああ",
+    "output": "どんな質問をあなたは作ってるの?"
+  },
+  {
+    "instruction": "どんな質問をあなたは作ってるの?",
+    "output": "ああ"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "ああ",
+    "output": "どんな質問をあなたは作ってるの?"
+  },
+  {
+    "instruction": "どんな質問をあなたは作ってるの?",
+    "output": "ああ"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "どんな質問を思いつくの?",
+    "output": "ああ"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どんな質問を書いたらいいと思う?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どう?\r\n\r\n\r\nQuestion: どんな質問を書いたらいいと思う?\r\nquestion:\r\nどんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どう?\r\n\r\n\r\nQuestion: どんな質問を書いたらいいと思う?\r\nquestion:\r\nどんな質問を書いたらいいと思う?",
+    "output": "aa"
+  },
+  {
+    "instruction": "aa",
+    "output": "どう?\r\n\r\n\r\nQuestion: どんな質問を書いたらいいと思う?\r\nquestion:\r\nどんな質問を書いたらいいと思う?"
+  },
+  {
+    "instruction": "どう?\r\n\r\n\r\nQuestion: どんな質問を書いたらいいと思う?\r\nquestion:\r\nどんな質問を書いたらいいと思う?",
+    "output": "aa"
+  },
+  {
+    "instruction": "ああ",
+    "output": "どんな質問を思いつくの?"
+  },
+  {
+    "instruction": "どんな質問を思いつくの?",
+    "output": "ああ"
+  },
+  {
+    "instruction": "あなたにとって一番思い出深いことは何ですか?",
+    "output": "あああああ"
+  }
+]

@@ -13,7 +13,7 @@ import torch
 # IとIIを統合したモデル
 # MODEL_PATH = str(Path("./tunedModels/prototype_fukaboriIII/checkpoint-500/").resolve())
 
-MODEL_PATH = str(Path("./tunedModels/kariModels/kari1-3/checkpoint-1080/").resolve())
+MODEL_PATH = str(Path("tunedModels/kariModels/kari1-3/checkpoint-1080").resolve())
 
 TOKENIZER_PATH = "cyberagent/open-calm-small"
 TOKENIZER_USE_FAST = False

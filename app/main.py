@@ -160,7 +160,12 @@ def form_post(
         
     # ファインチューニングのトリガー
     if chatLog_len - last_finetune_count >= 10:
-        state.ser.write(b"Tuning\n")
+        if state.ser:
+            try:
+                state.ser.write(b"Tuning\n")
+            except Exception as e:
+                print(f"⚠️ シリアル送信エラー: {e}")
+
         threading.Thread(target=modelUpdate, args=(chatLog_len,)).start()
         last_finetune_count = chatLog_len  # 実行後に更新
 

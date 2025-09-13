@@ -22,5 +22,25 @@
   {
     "instruction": "どんな風に文章を書けばいいと思う?",
     "output": "ああああ"
+  },
+  {
+    "instruction": "なぜ好きな色は何色なの?",
+    "output": "ああああああ"
+  },
+  {
+    "instruction": "ああああああ",
+    "output": "色は何色?"
+  },
+  {
+    "instruction": "色は何色?",
+    "output": "青色"
+  },
+  {
+    "instruction": "青色",
+    "output": "色は何色なの?"
+  },
+  {
+    "instruction": "色は何色なの?",
+    "output": "赤色"
   }
 ]

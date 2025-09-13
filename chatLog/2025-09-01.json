@@ -1,0 +1,58 @@
+[
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "aaa",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "aaa"
+  },
+  {
+    "instruction": "どんな時に質問をするのがおすすめ?\r\n",
+    "output": "気になる時"
+  },
+  {
+    "instruction": "気になる時",
+    "output": "どんな時に質問するのがおすすめ?"
+  },
+  {
+    "instruction": "どんな時に質問するのがおすすめ?",
+    "output": "あ"
+  },
+  {
+    "instruction": "あ",
+    "output": "AI\r\n\r\n\r\nAIはどのように物事を判断する?"
+  },
+  {
+    "instruction": "AI\r\n\r\n\r\nAIはどのように物事を判断する?",
+    "output": "あああ"
+  }
+]
