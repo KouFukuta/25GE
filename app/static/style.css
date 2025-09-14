@@ -307,11 +307,21 @@ body {
     margin-left: 10px;
 }
 
+.reGenerate-button:disabled {
+    background-color: #cccccc; /* グレー */
+    cursor: not-allowed;       /* カーソルを禁止マークに */
+    opacity: 0.6;              /* 少し透けさせる */
+}
+
 /* ここまでフォーム */
 
 
 /* responsive */
 @media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
     body {
         width: 100%;
         height: 100svh;
@@ -363,7 +373,7 @@ body {
 
     .question-container {
         width: 70%;
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
     .question-section::before {

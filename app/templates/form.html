@@ -75,8 +75,8 @@
 
               <div class="button-container">
                 <!-- 送信ボタン -->
-                <button type="submit" class="form-submit form-button" disabled><img src="/static/images/submitbutton.SVG"
-                    alt="submit"></button>
+                <button type="submit" class="form-submit form-button" disabled><img
+                    src="/static/images/submitbutton.SVG" alt="submit"></button>
               </div>
 
             </div>
@@ -88,14 +88,13 @@
       </div>
 
       <!-- 質問再生成ボタン -->
-       <!-- 初めだけ表示させたい -->
-        {% if chatLogs|length == 0 %}
       <form id="reGenerate-form" action="/reGenerate" method="post">
         <input type="hidden" name="session_id" value="{{ session_id }}">
-        <button type="submit" class="reGenerate-button reGenerate-position" formaction="/reGenerate"><img
-            src="/static/images/reload_icon.SVG" alt="reload"></button>
+        <button type="submit" class="reGenerate-button reGenerate-position" {% if answered %}disabled{% endif %}>
+          <img src="/static/images/reload_icon.SVG" alt="reload">
+        </button>
       </form>
-      {% endif %}
+
 
     </div>
 

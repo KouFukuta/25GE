@@ -18,6 +18,8 @@ from .fineTune import startFinetuning
 from .generate import generateAnswer
 from .fineTune_5datasets import modelUpdate
 from .setUSB import findNuigurumi
+from pydantic import BaseModel
+import requests
 
 # # -----ファインチューニングのスケジューラー-----
 
@@ -93,7 +95,6 @@ else:
     print("ぬいぐるみ無しでも動作続行します〜")
 
 
-
 # -----form.htmlで使うコード-----
 
 # GET: 質問を生成
@@ -115,6 +116,7 @@ def form_get(request: Request, session_id: str = None):
         "question": question,
         "chatLogs": session_logs[session_id],
         "session_id": session_id,  # テンプレートにも渡す
+        "answered": not session_first_request[session_id],
     })
 
 
@@ -151,12 +153,47 @@ def form_post(
     if not chat_log:
         # 最初の質問と人間の回答
         chatLog_len = saveJSON(question, answer)
+        
+        # 追加: M5Stackに送信
+        m5stack_url = "http://192.168.1.115:8000/logs"
+        payload = {
+            "question": question,
+            "answer": answer,
+            "timestamp": datetime.now().isoformat(),
+            "device": "Server"
+        }
+        try:
+            res = requests.post(m5stack_url, json=payload, timeout=2)
+            if res.status_code == 200:
+                print("✅ M5Stackに送信成功")
+            else:
+                print("⚠️ M5Stack送信失敗:", res.status_code)
+        except Exception as e:
+            print("⚠️ M5Stack送信エラー:", e)
+            
     else:
         # 前回の人間の回答に対するAIの質問
         prev = chat_log[-1]
         chatLog_len = saveJSON(prev["answer"], question)  # instruction: 人間の答え, output: 今回のAI質問
         chatLog_len = saveJSON(question, answer)    
         # instruction: AI質問, output: 人間の答え
+        
+        # 追加: M5Stackに送信
+        m5stack_url = "http://192.168.1.119:8000/logs"
+        payload = {
+            "question": question,
+            "answer": answer,
+            "timestamp": datetime.now().isoformat(),
+            "device": "Server"
+        }
+        try:
+            res = requests.post(m5stack_url, json=payload, timeout=2)
+            if res.status_code == 200:
+                print("✅ M5Stackに送信成功")
+            else:
+                print("⚠️ M5Stack送信失敗:", res.status_code)
+        except Exception as e:
+            print("⚠️ M5Stack送信エラー:", e)
         
     # ファインチューニングのトリガー
     if chatLog_len - last_finetune_count >= 10:
@@ -176,6 +213,9 @@ def form_post(
         "response": response_text,
     })
     
+    # 最初の回答が済んだらフラグを更新
+    session_first_request[session_id] = False
+    
     if state.ser:
         try:
             state.ser.write(b"finishResponse\n")
@@ -187,7 +227,9 @@ def form_post(
         "question": response_text,
         "chatLogs": chat_log,
         "session_id": session_id,
+        "answered": not session_first_request[session_id],
     })
+
     
 # 最初の質問の再生成 答えられない時など
 @app.post("/reGenerate", response_class=HTMLResponse)
@@ -210,6 +252,7 @@ def reGenerateQuestion(request: Request,
         "question": question,
         "chatLogs": session_logs[session_id],
         "session_id": session_id,  # テンプレートにも渡す
+        "answered": not session_first_request[session_id],
     })
     
     
@@ -231,6 +274,7 @@ def generate_get(request: Request, session_id: str = None):
         "request": request,
         "chatLogs": session_logs[session_id],
         "session_id": session_id,  # テンプレートにも渡す
+        "answered": not session_first_request[session_id],
     })
 
 @app.post("/generate", response_class=HTMLResponse)
@@ -260,4 +304,5 @@ def generate_post(
         "response": response_text,
         "chatLogs": Gen_chat_log,
         "session_id": session_id,
+        "answered": not session_first_request[session_id],
     })
