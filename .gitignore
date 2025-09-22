@@ -9,6 +9,6 @@ output/
 #tailwindCSS
 node_modules/
 
-評価用ツール
+# 評価用ツール
 llm-jp-judge-main/
 
