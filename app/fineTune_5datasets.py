@@ -15,7 +15,7 @@ import app.state as state
 from .config import TOKENIZER_PATH
 
 def modelUpdate(chatLog_len):
-    start = chatLog_len - 10
+    start = chatLog_len - 30
     end = chatLog_len
     model_path = FiveFinetuning(start, end)
      
@@ -23,8 +23,8 @@ def modelUpdate(chatLog_len):
             model_path,
             local_files_only=True,
             torch_dtype=torch.bfloat16
-        )
-     
+    )
+
     tokenizer = AutoTokenizer.from_pretrained(
         TOKENIZER_PATH
      )
