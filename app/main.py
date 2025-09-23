@@ -155,7 +155,7 @@ def form_post(
         chatLog_len = saveJSON(question, answer)
         
         # 追加: M5Stackに送信
-        m5stack_url = "http://192.168.1.115:8000/logs"
+        m5stack_url = "http://192.168.1.116:8000/logs"
         payload = {
             "question": question,
             "answer": answer,
@@ -179,7 +179,7 @@ def form_post(
         # instruction: AI質問, output: 人間の答え
         
         # 追加: M5Stackに送信
-        m5stack_url = "http://192.168.1.119:8000/logs"
+        m5stack_url = "http://192.168.1.116:8000/logs"
         payload = {
             "question": question,
             "answer": answer,
@@ -196,7 +196,7 @@ def form_post(
             print("⚠️ M5Stack送信エラー:", e)
         
     # ファインチューニングのトリガー
-    if chatLog_len - last_finetune_count >= 10:
+    if chatLog_len - last_finetune_count >= 30:
         if state.ser:
             try:
                 state.ser.write(b"Tuning\n")

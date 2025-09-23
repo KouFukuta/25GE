@@ -1,46 +1,362 @@
 [
   {
-    "instruction": "どんなときにどんなことをしてリラックスするの?",
-    "output": "aaaaa"
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "上手くいったときに達成感が強くなる気持ち"
   },
   {
-    "instruction": "どんな質問を作ってどんなことを伝えたいの?",
-    "output": "a"
+    "instruction": "どんなタスクが大切だと思う?",
+    "output": "役に立つタスク"
   },
   {
-    "instruction": "どんな質問を作ってどんなことを伝えたいの?",
-    "output": "a"
+    "instruction": "役に立つタスク",
+    "output": "どうしてそんな質問を思いついたの?"
+  },
+  {
+    "instruction": "どうしてそんな質問を思いついたの?",
+    "output": "なぜこんなに暑い？"
+  },
+  {
+    "instruction": "なぜこんなに暑い？",
+    "output": "暑いから?\r\n\r\n\r\nどんなタスクが大切だと思う?"
+  },
+  {
+    "instruction": "暑いから?\r\n\r\n\r\nどんなタスクが大切だと思う?",
+    "output": "冷房のタスク"
+  },
+  {
+    "instruction": "冷房のタスク",
+    "output": "なぜ自分は何のためにブログを書いているの?"
+  },
+  {
+    "instruction": "なぜ自分は何のためにブログを書いているの?",
+    "output": "自己顕示欲！"
   },
   {
     "instruction": "どんな時に心が落ち着くの?",
-    "output": "ああああ"
+    "output": "お風呂にはいる"
   },
   {
-    "instruction": "どんな風に回答していますか?\r\n\r\n###",
-    "output": "こんにちは"
+    "instruction": "あなたがどんな気持ちで毎日を過ごしているの?",
+    "output": "ひま"
   },
   {
-    "instruction": "どんな風に文章を書けばいいと思う?",
-    "output": "ああああ"
+    "instruction": "どんな時に心が落ち着くの?",
+    "output": "ご飯を食べている時"
   },
   {
-    "instruction": "なぜ好きな色は何色なの?",
-    "output": "ああああああ"
+    "instruction": "ご飯を食べている時",
+    "output": "何を食べたいの?"
   },
   {
-    "instruction": "ああああああ",
-    "output": "色は何色?"
+    "instruction": "何を食べたいの?",
+    "output": "お肉"
   },
   {
-    "instruction": "色は何色?",
-    "output": "青色"
+    "instruction": "お肉",
+    "output": "どんなお肉が好き?"
   },
   {
-    "instruction": "青色",
-    "output": "色は何色なの?"
+    "instruction": "どんなお肉が好き?",
+    "output": "鶏もも肉"
   },
   {
-    "instruction": "色は何色なの?",
-    "output": "赤色"
+    "instruction": "鶏もも肉",
+    "output": "どんなお肉が好き?"
+  },
+  {
+    "instruction": "どんなお肉が好き?",
+    "output": "牛タン"
+  },
+  {
+    "instruction": "牛タン",
+    "output": "どんなお肉が好き?"
+  },
+  {
+    "instruction": "どんなお肉が好き?",
+    "output": "ホルモン"
+  },
+  {
+    "instruction": "どんなときに気分が落ち込むの?\r\n",
+    "output": "失敗をしたとき"
+  },
+  {
+    "instruction": "あなたの好きな映画は何ですか?",
+    "output": "キンツア"
+  },
+  {
+    "instruction": "キンツア",
+    "output": "何を見たいの?\r\n\r\n\r\nどんな映画が好き?"
+  },
+  {
+    "instruction": "何を見たいの?\r\n\r\n\r\nどんな映画が好き?",
+    "output": "ライブシーンが多い映画が好き"
+  },
+  {
+    "instruction": "ライブシーンが多い映画が好き",
+    "output": "ライブシーンが多い映画って好き?"
+  },
+  {
+    "instruction": "ライブシーンが多い映画って好き?",
+    "output": "好き"
+  },
+  {
+    "instruction": "好き",
+    "output": "どんなときに、どんなことをして心が落ち着くの?"
+  },
+  {
+    "instruction": "どんなときに、どんなことをして心が落ち着くの?",
+    "output": "寝ている時"
+  },
+  {
+    "instruction": "寝ている時",
+    "output": "あなたは何をして心を落ち着かせる?\r\n\r\n\r\n自分の気持ちに耳を傾けること\r\n\r\n\r\nあなたはどんな時に"
+  },
+  {
+    "instruction": "あなたは何をして心を落ち着かせる?\r\n\r\n\r\n自分の気持ちに耳を傾けること\r\n\r\n\r\nあなたはどんな時に",
+    "output": "本を読む"
+  },
+  {
+    "instruction": "本を読む",
+    "output": "本を読むとき、あなたは何をしていますか?\r\nQuestion: どんな本を読んでいるの?"
+  },
+  {
+    "instruction": "本を読むとき、あなたは何をしていますか?\r\nQuestion: どんな本を読んでいるの?",
+    "output": "現代小説"
+  },
+  {
+    "instruction": "現代小説",
+    "output": "現代小説って、どんなジャンル?\r\nQuestion: 現代小説は、どんなジャンル?\r\nUser: 現代小説は、どんなジャンル?"
+  },
+  {
+    "instruction": "現代小説って、どんなジャンル?\r\nQuestion: 現代小説は、どんなジャンル?\r\nUser: 現代小説は、どんなジャンル?",
+    "output": "池井戸潤さんが好きです"
+  },
+  {
+    "instruction": "池井戸潤さんが好きです",
+    "output": "池井戸さんって、どんな作品が好き?\r\nQuestion: 池井戸さん作品は、どんなジャンル?\r\nUser: 池井戸さん作品は、"
+  },
+  {
+    "instruction": "池井戸さんって、どんな作品が好き?\r\nQuestion: 池井戸さん作品は、どんなジャンル?\r\nUser: 池井戸さん作品は、",
+    "output": "銀行をテーマとした小説です"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "つかれたときにねむたくなる"
+  },
+  {
+    "instruction": "つかれたときにねむたくなる",
+    "output": "どんなことを意識してタスク管理してるの?"
+  },
+  {
+    "instruction": "どんなことを意識してタスク管理してるの?",
+    "output": "時間短縮"
+  },
+  {
+    "instruction": "時間短縮",
+    "output": "どんな時にどんな気持ちになるの?"
+  },
+  {
+    "instruction": "どんな時にどんな気持ちになるの?",
+    "output": "美味しいものを食べたときに嬉しい気持ちになる"
+  },
+  {
+    "instruction": "美味しいものを食べたときに嬉しい気持ちになる",
+    "output": "美味しいものを食べたときに嬉しい気持ちになる?"
+  },
+  {
+    "instruction": "美味しいものを食べたときに嬉しい気持ちになる?",
+    "output": "なる"
+  },
+  {
+    "instruction": "どんな質問を思いつくの?",
+    "output": "好きな食べ物は"
+  },
+  {
+    "instruction": "好きな食べ物は",
+    "output": "何が好き?\r\n\r\n\r\nトマト\r\n\r\n\r\nどんな味がする?"
+  },
+  {
+    "instruction": "何が好き?\r\n\r\n\r\nトマト\r\n\r\n\r\nどんな味がする?",
+    "output": "甘い"
+  },
+  {
+    "instruction": "甘い",
+    "output": "甘いものが好き"
+  },
+  {
+    "instruction": "甘いものが好き",
+    "output": "そこまで"
+  },
+  {
+    "instruction": "そこまで",
+    "output": "甘いものは、どんな食べ物が合う?"
+  },
+  {
+    "instruction": "甘いものは、どんな食べ物が合う?",
+    "output": "しょっぱいもの"
+  },
+  {
+    "instruction": "しょっぱいもの",
+    "output": "しょっぱいのは、どんな食べ物が合う?"
+  },
+  {
+    "instruction": "しょっぱいのは、どんな食べ物が合う?",
+    "output": "水"
+  },
+  {
+    "instruction": "水",
+    "output": "水\r\n\r\n\r\n水分補給には、どんな水分補給が適している?\r\n\r\n\r\n水分補給には、"
+  },
+  {
+    "instruction": "水\r\n\r\n\r\n水分補給には、どんな水分補給が適している?\r\n\r\n\r\n水分補給には、",
+    "output": "ポカリ"
+  },
+  {
+    "instruction": "ポカリ",
+    "output": "水分補給は、どんな水分補給が適している?\r\nQuestion: 水分補給には、どんな水分補給が適している?"
+  },
+  {
+    "instruction": "水分補給は、どんな水分補給が適している?\r\nQuestion: 水分補給には、どんな水分補給が適している?",
+    "output": "塩分"
+  },
+  {
+    "instruction": "あなたの好きな音楽は?",
+    "output": "あんぱんまんたいそう"
+  },
+  {
+    "instruction": "どんな時に気分が落ち込むの?",
+    "output": "悲しいとき"
+  },
+  {
+    "instruction": "悲しいとき",
+    "output": "どんな気持ちの時が一番落ち込みやすい?"
+  },
+  {
+    "instruction": "どんな気持ちの時が一番落ち込みやすい?",
+    "output": "雨の時"
+  },
+  {
+    "instruction": "雨の時",
+    "output": "雨は好き?\r\n\r\n\r\n雨は嫌い"
+  },
+  {
+    "instruction": "雨は好き?\r\n\r\n\r\n雨は嫌い",
+    "output": "ちょっと嫌い"
+  },
+  {
+    "instruction": "ちょっと嫌い",
+    "output": "雨は好き?\r\n\r\n\r\n雨は好き"
+  },
+  {
+    "instruction": "雨は好き?\r\n\r\n\r\n雨は好き",
+    "output": "まぁ…"
+  },
+  {
+    "instruction": "まぁ…",
+    "output": "雨は好き?"
+  },
+  {
+    "instruction": "雨は好き?",
+    "output": "う、うん"
+  },
+  {
+    "instruction": "う、うん",
+    "output": "雨は好き?\r\n\r\n\r\n雨は好き"
+  },
+  {
+    "instruction": "雨は好き?\r\n\r\n\r\n雨は好き",
+    "output": "はい"
+  },
+  {
+    "instruction": "はい",
+    "output": "雨って楽しいよね。\r\n\r\nQuestion: どんな時?\r\nUser: 雨は嫌い"
+  },
+  {
+    "instruction": "雨って楽しいよね。\r\n\r\nQuestion: どんな時?\r\nUser: 雨は嫌い",
+    "output": "嫌い"
+  },
+  {
+    "instruction": "嫌い",
+    "output": "雨は好き?\r\nQuestion: 好き\r\n\r\n\r\n雨は嫌い"
+  },
+  {
+    "instruction": "雨は好き?\r\nQuestion: 好き\r\n\r\n\r\n雨は嫌い",
+    "output": "嫌い"
+  },
+  {
+    "instruction": "嫌い",
+    "output": "雨は嫌い"
+  },
+  {
+    "instruction": "雨は嫌い",
+    "output": "そう"
+  },
+  {
+    "instruction": "そう",
+    "output": "雨は嫌い?"
+  },
+  {
+    "instruction": "雨は嫌い?",
+    "output": "はい"
+  },
+  {
+    "instruction": "はい",
+    "output": "雨は嫌いですか?\r\nQuestion: 嫌い\r\nQuestion: 嫌い\r\n\r\n\r\n雨は嫌い"
+  },
+  {
+    "instruction": "雨は嫌いですか?\r\nQuestion: 嫌い\r\nQuestion: 嫌い\r\n\r\n\r\n雨は嫌い",
+    "output": "はい"
+  },
+  {
+    "instruction": "はい",
+    "output": "雨は嫌いですか?"
+  },
+  {
+    "instruction": "雨は嫌いですか?",
+    "output": "はい"
+  },
+  {
+    "instruction": "はい",
+    "output": "雨は好き?"
+  },
+  {
+    "instruction": "雨は好き?",
+    "output": "いいえ"
+  },
+  {
+    "instruction": "いいえ",
+    "output": "雨は嫌いですか?\r\nQuestion: 雨は嫌い"
+  },
+  {
+    "instruction": "雨は嫌いですか?\r\nQuestion: 雨は嫌い",
+    "output": "嫌いでもない"
+  },
+  {
+    "instruction": "どんな時に、どんな気持ちになるの?",
+    "output": "新しい場所に来たらワクワクする"
+  },
+  {
+    "instruction": "新しい場所に来たらワクワクする",
+    "output": "ワクワクする場所って、どこ?"
+  },
+  {
+    "instruction": "ワクワクする場所って、どこ?",
+    "output": "遊園地"
+  },
+  {
+    "instruction": "遊園地",
+    "output": "遊園地ってどんなところ?\r\n\r\n\r\n遊園地は、遊園地ならではの楽しみ方がある\r\n\r\n\r\n遊園地では、遊園地"
+  },
+  {
+    "instruction": "遊園地ってどんなところ?\r\n\r\n\r\n遊園地は、遊園地ならではの楽しみ方がある\r\n\r\n\r\n遊園地では、遊園地",
+    "output": "楽しいところ！"
+  },
+  {
+    "instruction": "楽しいところ！",
+    "output": "どんな質問を作って\r\n\r\n### 応答:"
+  },
+  {
+    "instruction": "どんな質問を作って\r\n\r\n### 応答:",
+    "output": "何ですか？"
   }
 ]
